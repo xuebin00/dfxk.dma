@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/public_css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/share.css" />
+		<script src="js/public_js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+			
+			.tab {
+				width: 7rem;
+				margin: 0.55rem auto;
+				border: 1px solid #ccc;
+			}
+			
+			.header {
+				background: #3598db;
+				font-size: 0.3rem;
+				color: #ffffff;
+				height: 1rem;
+				line-height: 1rem;
+				text-align: center;
+			}
+			
+			.back_ {
+				background: #f8f8f8;
+			}
+			
+			.center ul li {
+				float: left;
+				height: 1rem;
+				line-height: 1rem;
+				text-align: center;
+				color: #000000;
+				font-size: 0.3rem;
+				width: 33.33%;
+				overflow: hidden;
+				border-right: 1px solid #ccc;
+			}
+			
+			.center ul li:last-child {
+				border-right: none !important;
+			}
+			
+			.center ul {
+				height: 1rem;
+				border-bottom: 1px solid #ccc;
+			}
+			
+			.cen_top > li {
+				width: 50% !important;
+				font-size: 0.28rem !important;
+				color: #3598db !important;
+				text-align: center !important;
+				border-right: none !important;
+			}
+			
+			em {
+				font-style: normal;
+			}
+			
+			#share img {
+				width: 20px;
+			}
+			
+			.g-header .call {
+				line-height: 57px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="g-header" style="position: relative;">
+			<!--返回-->
+			<a class="goback" href="###"><i class="i-common"></i></a>
+			<!--标题居中-->
+			<div class="title">回访统计</div>
+			<a href="###" id="share" class="call">
+				<img src="images/share.png" />
+			</a>
+		</div>
+		<div id="body">
+
+			<div class="tab">
+				<div class="header" class="d1">邀约到店量排名</div>
+				<div class="center">
+					<ul class="cen_top">
+						<li class="d2">本周邀约量：<em>0</em></li>
+						<li class="d3">本月邀约量：<em>0</em></li>
+					</ul>
+					<ul class="back_">
+						<li>区域</li>
+						<li>本周排名</li>
+						<li>本月排名</li>
+					</ul>
+					<ul>
+						<li>本区</li>
+						<li class="d4">第0名</li>
+						<li class="d5">第0名</li>
+					</ul>
+					<ul>
+						<li>全国</li>
+						<li class="d6">第0名</li>
+						<li class="d7">第0名</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="tab">
+				<div class="header" class="d8">邀约到店率排名</div>
+				<div class="center">
+					<ul class="cen_top">
+						<li class="d9">本周邀约到店率：<em>0</em></li>
+						<li class="d10">本月邀约到店率：<em> 0</em></li>
+					</ul>
+					<ul class="back_">
+						<li>区域</li>
+						<li>本周排名</li>
+						<li>本月排名</li>
+					</ul>
+					<ul>
+						<li>本区</li>
+						<li class="d11">第0名</li>
+						<li class="d12">第0名</li>
+					</ul>
+					<ul>
+						<li>全国</li>
+						<li class="d13">第0名</li>
+						<li class="d14">第0名</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="share">
+			<div class="box">
+				<div class="list">
+					<ul class="clearfix">
+						<li>
+							<a href="###" class="wx-pyq" onclick="shareAction('weixin','yes')"><i></i><span>微信朋友圈</span></a>
+						</li>
+						<li>
+							<a href="###" class="wx" onclick="shareAction('weixin')"><i></i><span>微信好友</span></a>
+						</li>
+						<li>
+							<a href="###" class="sina" onclick="shareAction('sinaweibo')"><i></i><span>新浪微博</span></a>
+						</li>
+						<li>
+							<a href="###" class="qq" onclick="shareAction('qq')"><i></i><span>QQ</span></a>
+						</li>
+						<li>
+							<a href="###" class="qzone" onclick="shareAction('qq')"><i></i><span>QQ空间</span></a>
+						</li>
+					</ul>
+				</div>
+				<a href="javascript:;" class="cancel">取消分享</a>
+			</div>
+		</div>
+		<script src="js/public_js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var wih = $( window ).height();
+			$( "#body" ).height( wih - 50 + 'px' ).css( "overflow-y", "scroll" );
+			common.loading( 'show' );
+
+			//分享链接
+			var path_ = common.share_url;
+
+			var shares = null;
+			// 监听plusready事件  
+			document.addEventListener( "plusready", function () {
+				// 扩展API加载完毕，现在可以正常调用扩展API
+				plus.share.getServices( function ( s ) {
+					shares = s;
+				}, function ( e ) {
+					plus.nativeUI.toast( "获取分享服务列表失败：" + e.message );
+				} );
+
+			}, false );
+			/**
+			 * 分享操作
+			 * @param {plus.share.ShareService} s
+			 */
+			function shareAction( s, n ) {
+				if ( !s ) {
+					return;
+				}
+				for ( var i = 0; i < shares.length; i++ ) {
+					if ( s == shares[ i ][ 'id' ] ) {
+						s = shares[ i ];
+					}
+
+				}
+				if ( s.authenticated ) {
+
+					if ( n ) {
+						shareMessage( s );
+					} else {
+						shareMessage( s, 'yes' );
+					}
+				} else {
+					s.authorize( shareMessage, function ( e ) {
+						alert( "未进行认证" );
+					} );
+				}
+			}
+			/**
+			 * 发送分享消息
+			 * @param {plus.share.ShareService} s
+			 */
+			function shareMessage( s, n ) {
+				if ( n ) {
+					n = "WXSceneSession";
+				} else {
+					n = "WXSceneTimeline";
+				}
+				s.send( {
+						title: '东风小康我最棒，名列前茅，不服来战！',
+						content: "东风小康我最棒，名列前茅，不服来战！",
+						// pictures: 'www.baidu.com/img/bd_logo1.png',
+						thumbs: common._url+'share/share.jpg',
+						href: path_ + secret_key,
+						extra: {
+							scene: n
+						}
+					},
+					function () {
+						// 显示自动消失的提示消息
+						plus.nativeUI.toast( "分享成功" );
+					},
+					function ( e ) {
+						// 显示自动消失的提示消息
+						plus.nativeUI.toast( "分享失败" );
+					} );
+			}
+
+			//初始化获取 来源的参数值
+			function getQueryString( name ) {
+				var reg = new RegExp( '(^|&)' + name + '=([^&]*)(&|$)', 'i' );
+				var r = window.location.search.substr( 1 ).match( reg );
+				if ( r != null ) {
+					return unescape( r[ 2 ] );
+				}
+				return null;
+			};
+			var text_huifang = [ '回访量排名', '本周回访量：', '本月回访量：' ];
+			var text_daodian = [ '邀约到店量排名', '本周邀约到店量：', '本月邀约到店量：', '邀约到店率排名', '本周邀约到店率：', '本月邀约到店率：' ];
+			var text_chengjiao = [ '到店成交量排名', '本周成交量：', '本月成交量：', '到店成交率排名', '本周成交率：', '本月成交率：' ];
+			var url_ = getQueryString( 'type' );
+			var data = '';
+			if ( url_ == 1 ) {
+				$( ".g-header" ).find( ".title" ).text( '回访量排名' );
+				data = 'huifang';
+				$( ".tab" ).eq( 1 ).hide();
+			} else if ( url_ == 3 ) {
+				$( ".g-header" ).find( ".title" ).text( '业绩排名' );
+				data = 'chengjiao';
+			} else if ( url_ == 2 ) {
+				$( ".g-header" ).find( ".title" ).text( '业绩排名' );
+				data = 'daodian';
+			}
+
+			$.ajax( {
+				type: "get",
+				url: common._url + "appapi/getsharedata",
+				dataType: 'jsonp',
+				data: {
+					type: data
+				},
+				success: function ( mag ) {
+					common.loading( '' );
+					if ( mag ) {
+
+						var d2 =  mag.allArea.weekData.num;
+						var d3 =  mag.allArea.monthData.num;
+						var d2_ =  mag.allArea.weekData.snum;
+						var d3_ =  mag.allArea.monthData.snum;
+						var d4 =  mag.allArea.weekData.lnum + '%';
+						var d5 =  mag.allArea.monthData.lnum + '%';
+						var d6 = mag.area.weekData.pm == 0 ? '-' : '第' + mag.area.weekData.pm + '名';
+						var d7 = mag.area.monthData.pm == 0 ? '-' : '第' + mag.area.monthData.pm + '名';
+						var d8 = mag.allArea.weekData.pm == 0 ? '-' : '第' + mag.allArea.weekData.pm + '名';
+						var d9 = mag.allArea.monthData.pm == 0 ? '-' : '第' + mag.allArea.monthData.pm + '名';
+						var d10 = mag.area.weekData.lpm == 0 ? '-' : '第' + mag.area.weekData.lpm + '名';
+						var d11 = mag.area.monthData.lpm == 0 ? '-' : '第' + mag.area.monthData.lpm + '名';
+						var d12 = mag.allArea.weekData.lpm == 0 ? '-' : '第' + mag.allArea.weekData.lpm + '名';
+						var d13 = mag.allArea.monthData.lpm == 0 ? '-' : '第' + mag.allArea.monthData.lpm + '名';
+
+						if ( url_ == 1 ) {
+							$( ".header" ).eq( 0 ).text( text_huifang[ 0 ] );
+							$( '.d2' ).html( text_huifang[ 1 ] + d2 );
+							$( '.d3' ).html( text_huifang[ 2 ] + d3 );
+							$( '.d4' ).text( d6 );
+							$( '.d5' ).text( d7 );
+							$( '.d6' ).text( d8 );
+							$( '.d7' ).text( d9 );
+						} else if ( url_ == 2 ) {
+							$( ".header" ).eq( 0 ).text( text_daodian[ 0 ] );
+							$( ".header" ).eq( 1 ).text( text_daodian[ 3 ] );
+							$( '.d2' ).text( text_daodian[ 1 ] + d2_ );
+							$( '.d3' ).text( text_daodian[ 2 ] + d3_ );
+							$( '.d4' ).text( d10 );
+							$( '.d5' ).text( d11 );
+							$( '.d6' ).text( d12 );
+							$( '.d7' ).text( d13 );
+
+							$( '.d9' ).text( text_daodian[ 4 ] + d4 );
+							$( '.d10' ).text( text_daodian[ 5 ] + d5 );
+							$( '.d11' ).text( d10 );
+							$( '.d12' ).text( d11 );
+							$( '.d13' ).text( d12 );
+							$( '.d14' ).text( d13 );
+
+						} else {
+							$( ".header" ).eq( 0 ).text( text_chengjiao[ 0 ] );
+							$( ".header" ).eq( 1 ).text( text_chengjiao[ 3 ] );
+
+							$( '.d2' ).text( text_chengjiao[ 1 ] + d2_ );
+							$( '.d3' ).text( text_chengjiao[ 2 ] + d3_ );
+							$( '.d4' ).text( d10 );
+							$( '.d5' ).text( d11 );
+							$( '.d6' ).text( d12 );
+							$( '.d7' ).text( d13 );
+
+							$( '.d9' ).text( text_chengjiao[ 4 ] + d4 );
+							$( '.d10' ).text( text_chengjiao[ 5 ] + d5 );
+							$( '.d11' ).text( d10 );
+							$( '.d12' ).text( d11 );
+							$( '.d13' ).text( d12 );
+							$( '.d14' ).text( d13 );
+						}
+					} else {
+						common.pop( '暂无数据' );
+					}
+				}
+			} );
+			var secret_key = '';
+			$( "#share" ).on( "click", function () {
+				$( ".share " ).toggle();
+				$( ".share .box" ).slideToggle();
+				$.ajax( {
+					type: "get",
+					url: common._url + "appapi/getsharecode",
+					data: data,
+					dataType: 'jsonp',
+					success: function ( mag ) {
+						secret_key = mag;
+					}
+				} );
+			} )
+			$( ".cancel" ).on( "click", function () {
+				$( ".share " ).toggle();
+				$( ".share .box" ).slideToggle();
+			} );
+
+			$( '.goback' ).click( function () {
+				var cView = plus.webview.currentWebview();
+				cView.close();
+			} )
+		</script>
+
+	</body>
+
+</html>

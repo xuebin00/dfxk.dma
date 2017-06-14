@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimum-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/renwuxiangqing.css" />
+		<!-- 公用样式 -->
+		<link rel="stylesheet" href="css/public_css/common.css" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/lCalendar.css" />
+		<script type="text/javascript" src="js/public_js/rem.js"></script>
+		<style type="text/css">
+			label {
+				display: block;
+			}
+			#slid_ li{
+				padding: 0;
+			}
+			.m_fankui{
+				width: 2.8rem !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="g-header" style="position: relative;">
+			<!--返回-->
+			<a class="goback" href="javascript:history.go(-1);"><i class="i-common"></i></a>
+			<!--标题居中-->
+			<div class="title"></div>
+			<a href="" id="Tel" class="call">
+				<i class="i-common"></i><span>拨打电话</span>
+			</a>
+		</div>
+
+		<div id="m_content">
+			<form action="">
+				<ul class="name_list">
+					<label>
+					<li>
+						<span class="name">经销商名称:</span>
+						<input type="text" id="jxs_name" class="phone" readonly="readonly" />
+					</li>
+					</label>
+					<label>
+					<li>
+						<span class="name">称呼:</span>
+						<input type="text" id="BName" class="phone" placeholder="请输入您的称呼" />
+					</li>
+					</label>
+
+					<label for="BSex">
+					<li id="BSex">
+						<span class="name">性别:</span>
+						<input type="text" name="" value=""readonly="readonly" id="" />
+						<img src="images/public_img/select.png" alt="" />
+					</li>
+					</label>
+					<label>
+					<li>
+						<span class="name">电话:</span>
+						<input type="text" class="phone" readonly="readonly" id="BPhone" placeholder="请输入您的电话" />
+					</li>
+					</label>
+					<label for="BXProvinceId">
+					<li id="BXProvinceId">
+						<span class="name">地区:</span>
+						<input type="text" name="" id="" value="" readonly="readonly" />
+						<!--<img src="images/public_img/select.png" alt="" />-->
+					</li>
+					</label>
+					<label>
+					<li>
+						<span class="name">邮箱:</span>
+						<input type="email" class="phone" id="BEmail" placeholder="请输入您的邮箱" />
+					</li>
+					</label>
+					<label for="BLevelId" class="BLevelId">
+					<li id="BLevelId">
+						<span class="name">级别:</span>
+						<input type="text" readonly="readonly" name="" id="" value="" />
+						<img src="images/public_img/select.png" alt="" />
+					</li>
+					</label>
+					<label>
+					<li class='chexing'>
+						<span class="name">意向车系:</span>
+						<input type="text" class="phone" id="BSeriesclassId" placeholder="" readonly="readonly" />
+						<img src="images/public_img/sel_right.png" alt="" class="g_pic" />
+					</li>
+					</label>
+					<label>
+					<li class='chexi'>
+						<span class="name">意向车型:</span>
+						<input type="text" class="phone" id="BSeriesId" placeholder="" readonly="readonly" />
+						<img src="images/public_img/sel_right.png" alt="" class="g_pic" />
+					</li>
+					</label>
+					<label>
+					<li>
+						<span class="name">客户留言:</span>
+						<input type="text" class="phone" id="Note" placeholder="" />
+					</li>
+					</label>
+					<label>
+					<li>
+						<span class="name">预计到店时间:</span>
+						<input type="text" class="phone" readonly="readonly" placeholder="" id="demo1" name="input_date" />
+					</li>
+					</label>
+					<p class="g_p"></p>
+					<li>
+						<span class="name">渠道:</span>
+						<input type="text" class="phone" id="BChannelId" readonly="readonly" placeholder="" />
+					</li>
+					<li>
+						<span class="name">方式:</span>
+						<input type="text" class="phone" id="BTypeId" readonly="readonly" placeholder="" />
+					</li>
+					<li>
+						<span class="name">留资时间:</span>
+						<input type="text" class="phone" id="createTime" readonly="readonly" placeholder="" id="demo2" name="input_date" />
+					</li>
+					<li>
+						<span class="name">活动:</span>
+						<select class="string" id="BActivityId" disabled="disabled">
+							<option value="">双十一</option>
+							<option value="">一个月内</option>
+							<option value="">今天</option>
+						</select>
+
+					</li>
+					<li>
+						<span class="name">投放媒体:</span>
+						<select class="string" id="BMediaId" disabled="disabled">
+							<option value="">全部</option>
+							<option value="">一个月内</option>
+							<option value="">今天</option>
+						</select>
+
+					</li>
+				</ul>
+
+			</form>
+
+			<!--蒙版-->
+			<div class="mengban"></div>
+
+		</div>
+		<footer class="footer_nav" style="position: relative; bottom: 0px;">
+			<ul>
+				<li>
+					<a href="###" class="fankui"><span>反馈最新跟进情况</span></a>
+				</li>
+				<li>
+					<a class="lishi" href="">
+						<span>查看跟进历史</span>
+					</a>
+				</li>
+				<li>
+					<a class="huashu" href="">
+						<span>营销话术</span>
+					</a>
+				</li>
+			</ul>
+		</footer>
+
+		<!--反馈弹框-->
+		<div class="m_fankui">
+			<ul class="name_list m_uls" id="slid_">
+				<li class="ch_fktc">
+					<a href="###">邀请成功</a>
+				</li>
+
+			</ul>
+			<div class="m_corner"></div>
+		</div>
+
+		<!--车系 车型弹框-->
+		<div class="mask_box" id="mask_box">
+			<div class="ft_mask" id="ft_mask">
+				<div class="ft_float_left_box">
+					<div class="ft_double_arrow">
+						<span class="ft_double_arrow_right"></span>
+						<span class="ft_double_arrow_right ft_arrow_pos"></span>
+					</div>
+				</div>
+			</div>
+			<div class="ft_slide_box" id="ft_slide_box">
+				<!--品牌车型-->
+				<div class="ft_models_class">
+					<div class="ft_models_items">
+						<p class="ft_models_title">
+							<span>选择车系</span>
+						</p>
+						<ul id="seriesclass">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--车型弹窗-->
+		<div class="mask_box " id="mask_box1">
+			<div class="ft_mask" id="ft_mask1">
+				<div class="ft_float_left_box">
+					<div class="ft_double_arrow">
+						<span class="ft_double_arrow_right"></span>
+						<span class="ft_double_arrow_right ft_arrow_pos"></span>
+					</div>
+				</div>
+			</div>
+			<div class="ft_slide_box " id="ft_slide_box1">
+				<!--品牌车型-->
+				<div class="ft_models_class">
+					<div class="ft_models_items">
+						<p class="ft_models_title">
+							<span>选择车型</span>
+						</p>
+						<ul id="series">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--浮层 弹窗-->
+		<div class="popup" id="popup">
+			<span id="get_back">
+				
+			</span>
+			<textarea class="con" name="" id="note" rows="" placeholder="请将此跟进的情况填写与此……" cols=""></textarea>
+			<p class="shijian"><span>再次跟进时间：</span><input type="text" onclick="pickTime()" id="zaicigenjinshijian" readonly="readonly" /></p>
+			<p class="zhixiaoren"><span>直销人员：</span><input type="text" id="zhixiaoren" readonly="readonly" /></p>
+			<!--<div class="zhuangtai">线索状态：
+				<select name="xiansuozhuangtai" id="xiansuozhuangtai">
+					<option value=""></option>
+				</select>
+			</div>-->
+			<p id="ch_submit">点击提交</p>
+
+		</div>
+
+		<!--城市pop-->
+		<div class="m-selectBox">
+			<div class="shadow"></div>
+
+		</div>
+
+		<!--城市数据-->
+		<input type="hidden" name="city" id="city" value="" />
+		<!--城市id-->
+		<input type="hidden" name="cityId" id="cityId" value="" />
+		<!--省数据-->
+		<input type="hidden" name="provincedata" id="provincedata" value="" />
+		<!--省ID-->
+		<input type="hidden" name="ProvinceId" id="ProvinceId" value="" />
+
+		<!--级别数据-->
+		<input type="hidden" name="leveldata" id="leveldata" value="" />
+		<!--级别ID-->
+		<input type="hidden" name="levelID" id="levelID" value="" />
+		<!--线索ID-->
+		<input type="hidden" name="" id="clueId" value="" />
+		<!--状态码-->
+		<input type="hidden" name="" id="LZ" value="" />
+		<!--修改后的线索-->
+		<input type="hidden" name="newlz" id="newlz" value="" />
+
+		<!--车系数据-->
+		<input type="hidden" name="" id="seriesdata" value="" />
+		<!--车系id-->
+		<input type="hidden" name="" id="seriesID" value="" />
+
+		<!--角色id-->
+		<input type="hidden" name="" id="groupid" value="" />
+
+		<script type="text/javascript" src="js/public_js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/lCalendar.js"></script>
+		<script type="text/javascript" src="js/renwuxiangqing.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$( '.goback' ).click( function () {
+				var cView = plus.webview.currentWebview();
+				cView.close();
+			} )
+
+			//			var zaicigenjinshijian = new lCalendar();
+			//
+			//			zaicigenjinshijian.init( {
+			//				'trigger': '#zaicigenjinshijian',
+			//				'type': 'datetime'
+			//
+			//			} );
+			// 选择时间
+			function pickTime() {
+				plus.nativeUI.pickDate( function ( e ) {
+					var d = e.date;
+					plus.nativeUI.pickTime( function ( e ) {
+						var s = e.date;
+						$( '#zaicigenjinshijian' ).val( d.getFullYear() + "-" + ( d.getMonth() + 1 ) + "-" + d.getDate() + ' ' + s.getHours() + ":" + s.getMinutes() );
+					}, function ( e ) {} );
+				}, function ( e ) {} );
+			}
+			//历史页链接
+			//未知 0,ios 1,android 2,
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,323 @@
+{
+  "common.html": {
+    "resources": [
+      "css/public_css/common.css",
+      "js/common.js",
+      "js/public_js/jquery.min.js",
+      "images/public_img/icon-common.png",
+      "css/public_css/LCalendar.css",
+      "css/yewuzhibiao.css",
+      "js/public_js/rem.js",
+      "js/webview.js",
+      "images/public_img/dfxk_logo2.png",
+      "css/wo_bxx.css"
+    ],
+    "refer": [
+      "login.html",
+      "firstPageBoard.html",
+      "achievementStandard.html",
+      "my.html",
+      "xs_liebiao.html",
+      "messageList.html",
+      "statis.html"
+    ]
+  },
+  "login.html": {
+    "resources": [
+      "images/public_img/dfxk_logo2.png",
+      "images/public_img/icon_img5.png",
+      "js/login.js",
+      "css/shouye_dlu.css",
+      "images/public_img/icon_img2.png",
+      "images/public_img/icon_img1.png",
+      "css/public_css/common.css",
+      "js/common.js",
+      "js/public_js/jquery.min.js",
+      "js/public_js/rem.js",
+      "images/public_img/loading.png",
+      "images/public_img/loading.gif",
+      "css/wo_bxx.css",
+      "images/public_img/icon_img4.png",
+      "images/public_img/icon-recode.png",
+      "images/public_img/icon_img0.png"
+    ],
+    "refer": [
+      "firstPageBoard.html",
+      "common.html",
+      "xs_liebiao.html",
+      "achievementStandard.html",
+      "statis.html",
+      "taskSurvey.html",
+      "copy.html"
+    ]
+  },
+  "firstPageBoard.html": {
+    "resources": [
+      "images/public_img/youjiantou.png",
+      "images/public_img/loading.png",
+      "js/sykb.js",
+      "css/sykb.css",
+      "images/public_img/shouyekanban_banner.png",
+      "css/public_css/common.css",
+      "js/common.js",
+      "js/public_js/jquery.min.js",
+      "js/public_js/rem.js",
+      "xs_liebiao.html",
+      "achievementStandard.html",
+      "images/public_img/loading.gif",
+      "statis.html",
+      "taskSurvey.html",
+      "images/public_img/dfxk_logo2.png",
+      "images/public_img/icon-chaoshi.png",
+      "images/public_img/icon-daiban.png",
+      "images/public_img/icon-chenggong.png",
+      "images/public_img/icon--huifang.png",
+      "images/public_img/icon-chengjiao.png",
+      "images/public_img/icon-xiansuo.png",
+      "images/public_img/yjm_paiming.png"
+    ],
+    "refer": [
+      "common.html",
+      "xs_liebiao.html",
+      "share.html"
+    ]
+  },
+  "achievementStandard.html": {
+    "resources": [
+      "images/public_img/danxuananniu.png",
+      "js/yejizhibiao.js",
+      "images/public_img/timerline.png",
+      "images/public_img/zbsm.png",
+      "js/public_js/LCalendar.js",
+      "js/public_js/dateComputer.js",
+      "images/public_img/close.png",
+      "css/public_css/LCalendar.css",
+      "css/yewuzhibiao.css",
+      "images/public_img/loading.png",
+      "js/public_js/rem.js",
+      "css/public_css/common.css",
+      "js/common.js",
+      "js/public_js/jquery.min.js",
+      "firstPageBoard.html",
+      "images/public_img/danxuanxuanzhong.png",
+      "xs_liebiao.html",
+      "images/public_img/loading.gif",
+      "images/yeji_xiajiaotou.png",
+      "taskSurvey.html",
+      "images/public_img/yjm_b_paiming.png"
+    ],
+    "refer": [
+      "xs_liebiao.html",
+      "share.html"
+    ]
+  },
+  "xs_liebiao.html": {
+    "resources": [
+      "css/xsgj_xslb.css",
+      "js/public_js/iScroll.js",
+      "images/public_img/timerline.png",
+      "js/public_js/LCalendar.js",
+      "js/public_js/navbarscroll.js",
+      "images/public_img/xs_xiajiantou.png",
+      "js/public_js/flexible.js",
+      "js/xsgj_xslb.js",
+      "firstPageBoard.html",
+      "images/public_img/xs_foot_img.png",
+      "images/public_img/loading.png",
+      "js/public_js/rem.js",
+      "css/public_css/common.css",
+      "js/common.js",
+      "js/public_js/jquery.min.js",
+      "css/public_css/LCalendar.css",
+      "xs_liebiao.html",
+      "achievementStandard.html",
+      "images/public_img/loading.gif",
+      "images/public_img/sex_1.png",
+      "images/public_img/sex_2.png",
+      "images/public_img/whiteRjt.png",
+      "js/public_js/dateComputer.js"
+    ],
+    "refer": [
+      "xs_xiangqing.html",
+      "firstPageBoard.html"
+    ]
+  },
+  "my.html": {
+    "resources": [
+      "images/public_img/icon_up.png",
+      "css/my.css",
+      "images/public_img/icon_mail.png",
+      "images/public_img/icon_arr02.png",
+      "images/public_img/icon_why.png",
+      "images/public_img/icon_arr01.png",
+      "images/public_img/info_bg.jpg",
+      "images/touxiang.jpg",
+      "js/myInfo.js",
+      "images/public_img/icon-common.png",
+      "js/public_js/rem.js",
+      "css/public_css/common.css",
+      "js/common.js",
+      "js/public_js/jquery.min.js",
+      "images/public_img/loading.png",
+      "messageList.html",
+      "myUserinfo.html",
+      "copy.html",
+      "zb-help.html",
+      "images/public_img/loading.gif"
+    ],
+    "refer": [
+      "firstPageBoard.html",
+      "login.html",
+      "myUserinfo.html"
+    ]
+  },
+  "xs_xiangqing.html": {
+    "resources": [
+      "css/public_css/common.css",
+      "images/public_img/select.png",
+      "js/lCalendar.js",
+      "js/common.js",
+      "css/renwuxiangqing.css",
+      "images/public_img/loading.png",
+      "js/public_js/jquery.min.js",
+      "images/public_img/icon-common.png",
+      "js/renwuxiangqing.js",
+      "images/public_img/sel_right.png",
+      "css/lCalendar.css",
+      "js/public_js/rem.js",
+      "images/public_img/xs_zcgj.png",
+      "images/public_img/xs_yqcg.png",
+      "images/public_img/xs_xswx.png",
+      "images/public_img/xs_yqsb.png",
+      "/xs_lishi.html",
+      "images/public_img/loading.gif"
+    ],
+    "refer": [
+      "/xs_lishi.html"
+    ]
+  },
+  "messageList.html": {
+    "resources": [
+      "css/public_css/common.css",
+      "js/common.js",
+      "js/list_msg.js",
+      "js/public_js/jquery.min.js",
+      "images/public_img/icon-common.png",
+      "images/public_img/icon_bell02.png",
+      "css/list_msg.css",
+      "js/public_js/rem.js",
+      "my.html"
+    ],
+    "refer": [
+      "firstPageBoard.html"
+    ]
+  },
+  "myUserinfo.html": {
+    "resources": [
+      "my.html",
+      "css/my-info.css"
+    ],
+    "refer": [
+      "my.html"
+    ]
+  },
+  "copy.html": {
+    "resources": [
+      "images/public_img/dfxk_logo2.png",
+      "my.html",
+      "css/wo_bxx.css",
+      "images/public_img/icon-common.png"
+    ],
+    "refer": [
+      "my.html"
+    ]
+  },
+  "statis.html": {
+    "resources": [
+      "js/statis.2.0.js",
+      "css/statis.css",
+      "js/public_js/echarts.min.js",
+      "css/public_css/common.css",
+      "images/public_img/timerline.png",
+      "js/public_js/LCalendar.js",
+      "css/public_css/LCalendar.css",
+      "js/public_js/rem.js",
+      "firstPageBoard.html",
+      "js/common.js",
+      "js/public_js/jquery.min.js",
+      "images/public_img/loading.gif"
+    ],
+    "refer": []
+  },
+  "/xs_lishi.html": {
+    "resources": [
+      "/js/ch_xsgj_gjls.js",
+      "/images/public_img/icon-common.png",
+      "/js/public_js/jquery.min.js",
+      "/images/public_img/ch_gjls_line.png",
+      "/images/public_img/loading.png",
+      "/images/public_img/ch_gjli_tanhao.png",
+      "/css/public_css/common.css",
+      "/js/common.js",
+      "/css/ch_xsgj_gjls.css",
+      "/images/public_img/ch_gjls_icon07.png",
+      "/images/public_img/ch_gjls_tx.png",
+      "/js/public_js/rem.js",
+      "xs_xiangqing.html",
+      "/images/public_img/loading.gif"
+    ],
+    "refer": [
+      "xs_xiangqing.html"
+    ]
+  },
+  "taskSurvey.html": {
+    "resources": [
+      "js/tasksurvey.1.0.js",
+      "images/public_img/timerline.png",
+      "js/public_js/LCalendar.js",
+      "js/public_js/dateComputer.js",
+      "images/yeji_xiajiaotou.png",
+      "css/public_css/common.css",
+      "js/common.js",
+      "js/public_js/jquery.min.js",
+      "css/public_css/LCalendar.css",
+      "css/yewuzhibiao.css",
+      "images/public_img/loading.gif",
+      "js/public_js/rem.js",
+      "firstPageBoard.html",
+      "css/statis.css",
+      "js/statis.2.0.js",
+      "js/public_js/echarts.min.js",
+      "achievementStandard.html",
+      "statis.html"
+    ],
+    "refer": [
+      "firstPageBoard.html"
+    ]
+  },
+  "zb-help.html": {
+    "resources": [
+      "images/public_img/icon_img3.png",
+      "css/my_bz.css",
+      "my.html",
+      "images/banner_img.png"
+    ],
+    "refer": [
+      "my.html"
+    ]
+  },
+  "share.html": {
+    "resources": [
+      "css/share.css",
+      "images/public_img/icon-common.png",
+      "images/share.png",
+      "images/public_img/sahre.png",
+      "css/public_css/common.css",
+      "js/common.js",
+      "js/public_js/jquery.min.js",
+      "images/public_img/loading.gif",
+      "js/public_js/rem.js"
+    ],
+    "refer": []
+  }
+}

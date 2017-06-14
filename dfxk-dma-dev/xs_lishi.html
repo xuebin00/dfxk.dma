@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>线索跟进-跟进历史</title>
+		<!--本页面样式-->
+		<link rel="stylesheet" type="text/css" href="css/ch_xsgj_gjls.css" />
+		<link rel="stylesheet" type="text/css" href="css/public_css/common.css" />
+		<script src="js/public_js/rem.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="g-header">
+			<!--返回-->
+			<a class="goback" href="javascript:history.go(-1);"><i class="i-common"></i></a>
+			<!--标题居中-->
+			<div class="title" id="head">跟进历史</div>
+			<!--标题居左-->
+
+			<!--<a href="tel:18677778888" class="call">
+    			<i class="i-common"></i><span>拨打电话</span>
+    		</a>-->
+			<!--消息-->
+			<!--<a href="#" class="msg i-common">
+				<em class="num">12</em>
+			</a>-->
+		</div>
+
+		<div id="content" class="lan">
+			<!-- 列表-->
+			<ul class="ch-gjls-list" id="content_list">
+				<li class="status06">
+					<div class="title"><span></span> <em></em></div>
+					<div class="info"><span>1</span> <em></em> <i></i></div>
+					<div class="dingdan"><span></span>负责人: <em></em>
+						<a href="###"> </a>
+					</div>
+
+				</li>
+			</ul>
+
+		</div>
+		<!--浮层 弹窗-->
+		<div class="popup" id="popup">
+			<div class="con">
+				<img src="images/public_img/ch_gjli_tanhao.png" />
+				<p>不考虑本款车了。</p>
+				<button class="ch_btn">知道了</button>
+
+			</div>
+		</div>
+
+		<input type="hidden" name="clueId" id="clueId" value="" />
+		<script src="js/public_js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--本页面js-->
+		<script src="js/ch_xsgj_gjls.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+
+		<script>
+			var userInfo = '',
+				i = 1,
+				myData = new Date(),
+				rad = 1;
+
+			function my_random() {
+				var r = parseInt( Math.random() * 7 );
+				r = r <= 0 ? 1 : r;
+				if ( r == rad ) {
+					my_random();
+				} else {
+					rad = r;
+				}
+			}
+
+			function getLocalTime( nS ) {
+				var now = new Date( parseInt( nS ) * 1000 );
+				var year = now.getFullYear();
+				var month = now.getMonth() + 1;
+				var date = now.getDate();
+				var hour = now.getHours();
+				var minute = now.getMinutes();
+				var second = now.getSeconds();
+				month = month < 10 ? '0' + month : month;
+				date = date < 10 ? '0' + date : date;
+				return year + "-" + month + "-" + date + ' ' + hour + ':' + minute;
+			}
+
+			function myInsertHtml( obj, data, className, icon ) {
+				var ns = '';
+				if ( obj.createAt ) {
+					ns = getLocalTime( obj.createAt );
+				} else {
+					ns = '';
+				}
+				my_random()
+				var fzr = userInfo.userId == obj.uid ? '我' : data.userList[ obj.uid ];
+				if ( obj.note ) {
+					note = '<a href="###" data-note="' + obj.note + '"> </a>';
+				} else {
+					note = '';
+				}
+				lzto = data.states[ obj.lzto ];
+				if ( obj.note == '电销二次分配' || obj.note == '直销二次分配' ) {
+					if ( obj.uid == userInfo.userId ) {
+						lzto = '由' + fzr + '分配给' + data.userList[ obj.lzto ];
+					} else {
+						lzto = '由' + fzr + '分配给我';
+					}
+
+				}
+				var str = '<li class="status0' + rad + '">\
+						<div class="title"><span>跟进反馈</span> <em>' + ns + '</em></div>\
+						<div class="info"><span>' + i + '</span> <em>' + lzto + '</em> <i class="' + className + '">' + icon + '</i></div>\
+						<div class="dingdan"><span></span>负责人: <em>' + fzr + '</em> ' + note + '</div>\
+					</li>';
+				$( '#content_list' ).append( str );
+			}
+
+			function firstHtml( obj, data ) {
+
+				var cs = '',
+					timeOut = Number( data.timeOut ),
+					Time = parseInt( $.now() / 1000 ),
+					note = '';
+				switch ( obj.lzto ) {
+					case 30:
+					case 31:
+					case 41:
+						$( '#head' ).text( '将于' + getLocalTime( obj.marktime ) + '超时' )
+				}
+				myInsertHtml( obj, data, 'jiazai_svg', '&#xe61f;' );
+			}
+
+			function operateHtml( obj, data ) {
+				var str = '',
+					fzr = '我';
+				$.each( obj, function ( k, v ) {
+					i--;
+					myInsertHtml( v, data, 'duihao_svg', '&#xe502;' );
+
+				} );
+			}
+			$( '#content_list' ).empty();
+			common.loading( "show" );
+
+			//初始化获取 来源的参数值
+			function getQueryString( name ) {
+				var reg = new RegExp( '(^|&)' + name + '=([^&]*)(&|$)', 'i' );
+				var r = window.location.search.substr( 1 ).match( reg );
+				if ( r != null ) {
+					return unescape( r[ 2 ] );
+				}
+				return null;
+			}
+			var clueId = getQueryString( "clueId" );
+
+			$.ajax( {
+				type: "get",
+				url: common._url + "appapi/callerInfo",
+				data: {
+					clueId: clueId
+				},
+				dataType: 'jsonp',
+				async: true,
+				success: function ( data ) {
+					common.loading( "" );
+					console.log( data.data );
+					userInfo = data.userInfo.userInfo;
+					var data = data.data,
+						first = data.first,
+						operate = data.operate,
+						length = Object.keys( operate ).length;
+					i = length + 1;
+
+					if ( first != '' ) {
+						firstHtml( first, data );
+					}
+					if ( operate != '' ) {
+						operateHtml( operate, data );
+
+					}
+
+				}
+			} );
+		</script>
+	</body>
+
+</html>

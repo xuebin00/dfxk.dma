@@ -1,0 +1,608 @@
+{
+	"@platforms": [
+		"android",
+		"iPhone",
+		"iPad"
+	],
+	"id": "cn.com.dfsk.dma",/*应用的标识，创建应用时自动生成，勿手动修改*/
+	"name": "DMA助手",/*应用名称，程序桌面图标名称*/
+	"version": {
+		"name": "1.1",/*应用版本名称*/
+		"code": "10003"
+	},
+	"description": "",/*应用描述信息*/
+	"icons": {
+		"72": "icon.png"
+	},
+	"launch_path": "login.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+	"developer": {
+		"name": "",/*开发者名称*/
+		"email": "",/*开发者邮箱地址*/
+		"url": ""
+	},
+	"permissions": {
+
+
+
+		"Cache": {
+			"description": "管理应用缓存"
+		},
+		"Camera": {
+			"description": "访问摄像头"
+		},
+		"Console": {
+			"description": "跟踪调试输出日志"
+		},
+
+		"Device": {
+			"description": "访问设备信息"
+		},
+		"Downloader": {
+			"description": "文件下载管理"
+		},
+		"Events": {
+			"description": "应用扩展事件"
+		},
+		"File": {
+			"description": "访问本地文件系统"
+		},
+		"Gallery": {
+			"description": "访问系统相册"
+		},
+
+		"Invocation": {
+			"description": "使用Native.js能力"
+		},
+
+
+		"Storage": {
+			"description": "管理应用本地数据"
+		},
+
+		"Uploader": {
+			"description": "管理文件上传任务"
+		},
+		"Runtime": {
+			"description": "访问运行期环境"
+		},
+		"XMLHttpRequest": {
+			"description": "跨域网络访问"
+		},
+		"Zip": {
+			"description": "文件压缩与解压缩"
+		},
+		"Barcode": {
+			"description": "管理二维码扫描插件"
+		},
+
+
+		"Webview": {
+			"description": "窗口管理"
+		},
+		"NativeUI": {
+			"description": "原生UI控件"
+		},
+		"Navigator": {
+			"description": "浏览器信息"
+		},
+		"NativeObj": {
+			"description": "原生对象"
+		},
+		"Share": {}
+	},
+	"plus": {
+		"splashscreen": {
+			"autoclose": true,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
+			"waiting": true
+		},
+		"popGesture": "close",/*设置应用默认侧滑返回关闭Webview窗口，"none"为无侧滑返回功能，"hide"为侧滑隐藏Webview窗口。参考http://ask.dcloud.net.cn/article/102*/
+		"runmode": "normal",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
+		"distribute": {
+			"plugins": {
+				"share": {
+					"weixin": {
+						"appid": "wxee74ff3126a4a726",
+						"appsecret": "0fe5df8318ff0100f95f79ff65d96355",
+						"description": "可选，微信分享"
+					},
+					"sina": {
+						"appkey": "864791551",
+						"appsecret": "70a5f5a3f62d2066b589395ad5d56d73",
+						"redirect_uri": "http://dma.dfsk.com.cn",
+						"description": "可选，新浪微博分享"
+					},
+					"qq": {
+						"appid": "1106105238",
+						"description": "QQ分享"
+					}
+				}
+			},
+			"apple": {
+				"appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
+				"mobileprovision": "",/*iOS应用打包配置文件*/
+				"password": "",/*iOS应用打包个人证书导入密码*/
+				"p12": "",/*iOS应用打包个人证书，打包配置文件关联的个人证书*/
+				"devices": "universal",/*iOS应用支持的设备类型，可取值iphone/ipad/universal*/
+				"urltypes": [
+					{
+						"urlidentifier": "cn.com.dfsk.dma",
+						"urlschemes": [
+							"dfxkdma"
+						]
+					}
+				],
+				"frameworks": []
+			},
+			"google": {
+				"packagename": "cn.com.dfsk.dma",/*Android应用包名，如io.dcloud.HelloH5*/
+				"keystore": "",/*Android应用打包使用的密钥库文件*/
+				"password": "",/*Android应用打包使用密钥库中证书的密码*/
+				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
+				"permissions": [
+					"<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+					"<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+					"<uses-feature android:name=\"android.hardware.camera\"/>",
+					"<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+					"<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+					"<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.CAMERA\"/>"
+				],
+				/*使用Native.js调用原生安卓API需要使用到的系统权限*/
+				"schemes": [
+					"dfxkdma"
+				]
+			},
+			"orientation": [
+				"portrait-primary"
+			],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+			"icons": {
+				"ios": {
+					"prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
+					"auto": "", /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
+					"iphone": {
+						"normal": "unpackage/res/icons/57x57.png", /*iPhone3/3GS程序图标，分辨率：57x57*/
+						"retina": "unpackage/res/icons/114x114.png", /*iPhone4程序图标，分辨率：114x114*/
+						"retina7": "unpackage/res/icons/120x120.png", /*iPhone4S/5/6程序图标，分辨率：120x120*/
+						"retina8": "unpackage/res/icons/180x180.png", /*iPhone6 Plus程序图标，分辨率：180x180*/
+						"spotlight-normal": "unpackage/res/icons/29x29.png", /*iPhone3/3GS Spotlight搜索程序图标，分辨率：29x29*/
+						"spotlight-retina": "unpackage/res/icons/58x58.png", /*iPhone4 Spotlight搜索程序图标，分辨率：58x58*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png", /*iPhone4S/5/6 Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png", /*iPhone4设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png", /*iPhone4S/5/6设置页面程序图标，分辨率：58x58*/
+						"settings-retina8": "unpackage/res/icons/87x87.png"
+					},
+					"ipad": {
+						"normal": "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
+						"retina": "unpackage/res/icons/144x144.png", /*iPad高分屏程序图标，分辨率：144x144*/
+						"normal7": "unpackage/res/icons/76x76.png", /*iPad iOS7程序图标，分辨率：76x76*/
+						"retina7": "unpackage/res/icons/152x152.png", /*iPad iOS7高分屏程序图标，分辨率：152x152*/
+						"spotlight-normal": "unpackage/res/icons/50x50.png", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
+						"spotlight-retina": "unpackage/res/icons/100x100.png", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
+						"spotlight-normal7": "unpackage/res/icons/40x40.png",/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png",/*iPad设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png"
+					}
+				},
+				"android": {
+					"mdpi": "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
+					"ldpi": "unpackage/res/icons/48x48.png", /*大屏程序图标，分辨率：48x48*/
+					"hdpi": "unpackage/res/icons/72x72.png", /*高分屏程序图标，分辨率：72x72*/
+					"xhdpi": "unpackage/res/icons/96x96.png",/*720P高分屏程序图标，分辨率：96x96*/
+					"xxhdpi": "unpackage/res/icons/144x144.png",
+					"xxxhdpi": "unpackage/res/icons/192x192.png"
+				}
+			},
+			"splashscreen": {
+				"ios": {
+					"iphone": {
+						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
+						"retina35": "",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+						"retina40": "E:/201704-pro/DMA系统源文件/png/640-1136.png",/*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
+						"retina47": "E:/201704-pro/DMA系统源文件/png/750-1334.png",/*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
+						"retina55": "E:/201704-pro/DMA系统源文件/png/1242-2208.png",/*5.5 英寸设备(iPhone6 Plus)启动图片，分辨率：1242x2208*/
+						"retina55l": ""
+					},
+					"ipad": {
+						"portrait": "", /*iPad竖屏启动图片，分辨率：768x1004*/
+						"portrait-retina": "",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
+						"landscape": "", /*iPad横屏启动图片，分辨率：1024x748*/
+						"landscape-retina": "", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+						"portrait7": "", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+						"portrait-retina7": "",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+						"landscape7": "", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+						"landscape-retina7": ""
+					}
+				},
+				"android": {
+					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
+					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
+					"hdpi": "E:/201704-pro/DMA系统源文件/png/480-762.png", /*高分屏启动图片，分辨率：480x762*/
+					"xhdpi": "E:/201704-pro/DMA系统源文件/png/720-1242.png", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": "E:/201704-pro/DMA系统源文件/png/1080-1882.png"
+				}
+			}
+		}
+	},
+	"dependencies": {
+		"pages": {
+			"common.html": {
+				"resources": [
+					"css/public_css/common.css",
+					"js/common.js",
+					"js/public_js/jquery.min.js",
+					"images/public_img/icon-common.png",
+					"css/public_css/LCalendar.css",
+					"css/yewuzhibiao.css",
+					"js/public_js/rem.js",
+					"js/webview.js",
+					"images/public_img/dfxk_logo2.png",
+					"css/wo_bxx.css"
+				],
+				"refer": [
+					"login.html",
+					"firstPageBoard.html",
+					"achievementStandard.html",
+					"my.html",
+					"xs_liebiao.html",
+					"messageList.html",
+					"statis.html"
+				],
+				"priority": 0
+			},
+			"login.html": {
+				"resources": [
+					"images/public_img/dfxk_logo2.png",
+					"images/public_img/icon_img5.png",
+					"js/login.js",
+					"css/shouye_dlu.css",
+					"images/public_img/icon_img2.png",
+					"images/public_img/icon_img1.png",
+					"css/public_css/common.css",
+					"js/common.js",
+					"js/public_js/jquery.min.js",
+					"js/public_js/rem.js",
+					"images/public_img/loading.png",
+					"images/public_img/loading.gif",
+					"css/wo_bxx.css",
+					"images/public_img/icon_img4.png",
+					"images/public_img/icon-recode.png",
+					"images/public_img/icon_img0.png"
+				],
+				"refer": [
+					"firstPageBoard.html",
+					"common.html",
+					"xs_liebiao.html",
+					"achievementStandard.html",
+					"statis.html",
+					"taskSurvey.html",
+					"copy.html"
+				],
+				"priority": 0
+			},
+			"firstPageBoard.html": {
+				"resources": [
+					"images/public_img/youjiantou.png",
+					"images/public_img/loading.png",
+					"js/sykb.js",
+					"css/sykb.css",
+					"images/public_img/shouyekanban_banner.png",
+					"css/public_css/common.css",
+					"js/common.js",
+					"js/public_js/jquery.min.js",
+					"js/public_js/rem.js",
+					"xs_liebiao.html",
+					"achievementStandard.html",
+					"images/public_img/loading.gif",
+					"statis.html",
+					"taskSurvey.html",
+					"images/public_img/dfxk_logo2.png",
+					"images/public_img/icon-chaoshi.png",
+					"images/public_img/icon-daiban.png",
+					"images/public_img/icon-chenggong.png",
+					"images/public_img/icon--huifang.png",
+					null,
+					"images/public_img/icon-chengjiao.png",
+					"images/public_img/icon-xiansuo.png",
+					"images/public_img/yjm_paiming.png"
+				],
+				"refer": [
+					"common.html",
+					"share.html"
+				],
+				"priority": 0
+			},
+			"achievementStandard.html": {
+				"resources": [
+					"images/public_img/danxuananniu.png",
+					"js/yejizhibiao.js",
+					"images/public_img/timerline.png",
+					"images/public_img/zbsm.png",
+					"js/public_js/LCalendar.js",
+					"js/public_js/dateComputer.js",
+					"images/public_img/close.png",
+					"css/public_css/LCalendar.css",
+					"css/yewuzhibiao.css",
+					"images/public_img/loading.png",
+					"js/public_js/rem.js",
+					"css/public_css/common.css",
+					"js/common.js",
+					"js/public_js/jquery.min.js",
+					"firstPageBoard.html",
+					"images/public_img/danxuanxuanzhong.png",
+					"xs_liebiao.html",
+					"images/public_img/loading.gif",
+					"images/yeji_xiajiaotou.png",
+					"taskSurvey.html",
+					"images/public_img/yjm_b_paiming.png"
+				],
+				"refer": [
+					"share.html"
+				],
+				"priority": 0
+			},
+			"xs_liebiao.html": {
+				"resources": [
+					"css/xsgj_xslb.css",
+					"js/public_js/iScroll.js",
+					"images/public_img/timerline.png",
+					"js/public_js/LCalendar.js",
+					"js/public_js/navbarscroll.js",
+					"images/public_img/xs_xiajiantou.png",
+					"js/public_js/flexible.js",
+					"js/xsgj_xslb.js",
+					"firstPageBoard.html",
+					"images/public_img/xs_foot_img.png",
+					"images/public_img/loading.png",
+					"js/public_js/rem.js",
+					"css/public_css/common.css",
+					"js/common.js",
+					"js/public_js/jquery.min.js",
+					"css/public_css/LCalendar.css",
+					"xs_liebiao.html",
+					"achievementStandard.html",
+					"images/public_img/loading.gif",
+					"images/public_img/sex_1.png",
+					"images/public_img/sex_2.png",
+					"images/public_img/whiteRjt.png",
+					null,
+					"js/public_js/dateComputer.js"
+				],
+				"refer": [
+					"xs_xiangqing.html"
+				],
+				"priority": 0
+			},
+			"my.html": {
+				"resources": [
+					"images/public_img/icon_up.png",
+					"css/my.css",
+					"images/public_img/icon_mail.png",
+					"images/public_img/icon_arr02.png",
+					"images/public_img/icon_why.png",
+					"images/public_img/icon_arr01.png",
+					"images/public_img/info_bg.jpg",
+					"images/touxiang.jpg",
+					"js/myInfo.js",
+					"images/public_img/icon-common.png",
+					"js/public_js/rem.js",
+					"css/public_css/common.css",
+					"js/common.js",
+					"js/public_js/jquery.min.js",
+					"images/public_img/loading.png",
+					"messageList.html",
+					"myUserinfo.html",
+					"copy.html",
+					"zb-help.html",
+					"images/public_img/loading.gif"
+				],
+				"refer": [
+					"firstPageBoard.html",
+					"login.html"
+				],
+				"priority": 0
+			},
+			"xs_xiangqing.html": {
+				"resources": [
+					"css/public_css/common.css",
+					"images/public_img/select.png",
+					"js/lCalendar.js",
+					"js/common.js",
+					"css/renwuxiangqing.css",
+					"images/public_img/loading.png",
+					"js/public_js/jquery.min.js",
+					"images/public_img/icon-common.png",
+					"js/renwuxiangqing.js",
+					"images/public_img/sel_right.png",
+					"css/lCalendar.css",
+					"js/public_js/rem.js",
+					"images/public_img/xs_zcgj.png",
+					"images/public_img/xs_yqcg.png",
+					"images/public_img/xs_xswx.png",
+					"images/public_img/xs_yqsb.png",
+					"/xs_lishi.html",
+					"images/public_img/loading.gif",
+					null
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"messageList.html": {
+				"resources": [
+					"css/public_css/common.css",
+					"js/common.js",
+					"js/list_msg.js",
+					"js/public_js/jquery.min.js",
+					"images/public_img/icon-common.png",
+					"images/public_img/icon_bell02.png",
+					"css/list_msg.css",
+					"js/public_js/rem.js",
+					"my.html"
+				],
+				"refer": [
+					"firstPageBoard.html"
+				],
+				"priority": 0
+			},
+			"myUserinfo.html": {
+				"resources": [
+					"my.html",
+					"css/my-info.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"copy.html": {
+				"resources": [
+					"images/public_img/dfxk_logo2.png",
+					"my.html",
+					"css/wo_bxx.css",
+					"images/public_img/icon-common.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"statis.html": {
+				"resources": [
+					"js/statis.2.0.js",
+					"css/statis.css",
+					"js/public_js/echarts.min.js",
+					"css/public_css/common.css",
+					"images/public_img/timerline.png",
+					"js/public_js/LCalendar.js",
+					"css/public_css/LCalendar.css",
+					"js/public_js/rem.js",
+					"firstPageBoard.html",
+					"js/common.js",
+					"js/public_js/jquery.min.js",
+					"images/public_img/loading.gif"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"/xs_lishi.html": {
+				"resources": [
+					"/js/ch_xsgj_gjls.js",
+					"/images/public_img/icon-common.png",
+					"/js/public_js/jquery.min.js",
+					"/images/public_img/ch_gjls_line.png",
+					"/images/public_img/loading.png",
+					"/images/public_img/ch_gjli_tanhao.png",
+					"/css/public_css/common.css",
+					"/js/common.js",
+					"/css/ch_xsgj_gjls.css",
+					"/images/public_img/ch_gjls_icon07.png",
+					"/images/public_img/ch_gjls_tx.png",
+					"/js/public_js/rem.js",
+					"xs_xiangqing.html",
+					"/images/public_img/loading.gif"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"taskSurvey.html": {
+				"resources": [
+					"js/tasksurvey.1.0.js",
+					"images/public_img/timerline.png",
+					"js/public_js/LCalendar.js",
+					"js/public_js/dateComputer.js",
+					"images/yeji_xiajiaotou.png",
+					"css/public_css/common.css",
+					"js/common.js",
+					"js/public_js/jquery.min.js",
+					"css/public_css/LCalendar.css",
+					"css/yewuzhibiao.css",
+					"images/public_img/loading.gif",
+					"js/public_js/rem.js",
+					"firstPageBoard.html",
+					"css/statis.css",
+					"js/statis.2.0.js",
+					"js/public_js/echarts.min.js",
+					"achievementStandard.html",
+					"statis.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"zb-help.html": {
+				"resources": [
+					"images/public_img/icon_img3.png",
+					"css/my_bz.css",
+					"my.html",
+					"images/banner_img.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"share.html": {
+				"resources": [
+					"css/share.css",
+					"images/public_img/icon-common.png",
+					"images/share.png",
+					"images/public_img/sahre.png",
+					"css/public_css/common.css",
+					"js/common.js",
+					"js/public_js/jquery.min.js",
+					"images/public_img/loading.gif",
+					"js/public_js/rem.js"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"css/shouye_dlu.less",
+				"css/sykb.less",
+				"js/shouye_dlu.js",
+				"images/public_img/ch_gjls_icon06.png",
+				"images/public_img/icon_bell01.png",
+				"images/public_img/icon_bell03.png",
+				"index.html",
+				"images/public_img/ch_gjls_icon05.png",
+				"css/public_css/mixin.less",
+				"css/public_css/mixin.css",
+				"css/xsgj_xslb.less",
+				"images/public_img/ch_gjls_icon02.png",
+				"css/list_msg.less",
+				"images/public_img/icon_bell04.png",
+				"css/public_css/LCalendar.min.css",
+				"css/public_css/common.less",
+				"js/date.min.js",
+				"images/public_img/ch_gjls_tx.png",
+				"images/public_img/ch_gjls_icon04.png",
+				"xs_lishi.html",
+				"images/public_img/ch_gjls_icon03.png",
+				"images/public_img/ch_gjls_icon07.png",
+				"images/public_img/xs_xiajiatou.png",
+				"js/tasksurvey.js",
+				"images/public_img/ch_gjli_tanhao.png",
+				"css/my-info.less",
+				"js/navScroll.js",
+				"js/ch_xsgj_gjls.js",
+				"css/my.less",
+				"css/my_bz.less",
+				"css/wo_bxx.less",
+				"images/public_img/ch_gjls_line.png",
+				"js/public_js/LCalendar.min.js",
+				"zx-help.html",
+				"css/ch_xsgj_gjls.css",
+				"css/yewuzhibiao.less",
+				"css/ch_xsgj_gjls.less",
+				"js/public_js/vue-resource.min.js",
+				"images/public_img/ch_gjls_icon01.png",
+				"css/renwuxiangqing.less",
+				"css/statis.less",
+				"dx-help.html",
+				"js/public_js/vue.js",
+				"js/statis.js"
+			]
+		}
+	}
+}

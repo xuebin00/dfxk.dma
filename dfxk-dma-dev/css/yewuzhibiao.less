@@ -1,0 +1,413 @@
+@import 'public_css/mixin';
+
+* {
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color:#333;
+}
+li,
+ol,
+ul {
+    list-style: none;
+}
+.m_nav {
+    line-height: 1rem;
+    border-bottom: 1px solid #ccc;
+    ul {
+        display: flex;
+        display: -webkit-flex;
+        font-size: 0.3rem;
+        li {
+            flex: 1;
+            text-align: center;
+        }
+    }
+}
+
+.tishi {
+    color: #3598dc;
+    border-bottom: 1px solid #3598dc;
+}
+.g_total {
+    width: 80%;
+    height: 1.5rem;
+    margin: 0.4rem auto;
+    border: 1px solid #ccc;
+    border-left: 4px solid #1bbc9b;
+    span {
+        width: 40%;
+        height: 1.5rem;
+        line-height: 1.5rem;
+        text-align: center;
+        vertical-align: top;
+        display: inline-block;
+        font-size: 0.34rem;
+        font-weight: bolder;
+        border-right: 1px solid #ccc;
+
+    }
+    p {
+        width:57%;
+        text-align: center;
+        color: #1bbc9b;
+        font-style: normal;
+        font-size: 0.5rem;
+        display: inline-block;
+        padding-top: 0.15rem;
+        .text-ellipsis();
+        em {
+            font-size: 0.26rem;
+            color: #333;
+            font-style: normal;
+            i{
+                font-style: normal;
+            }
+        }
+    }
+}
+.g_total_extend{
+    margin: 0;
+    
+    width: 80%;
+    height: 1rem;
+    margin: 0.4rem auto;
+    border: 1px solid #ccc;
+    border-left: 4px solid #1bbc9b;
+    .radio_left{
+        float: left;
+        height: 1rem;
+        width: 40%;
+        p{
+           font-size: .28rem;
+           text-align: left;
+           margin-top: .2rem;
+           font-weight: bold;
+        }
+    }
+    .radio_right{
+        float: left;
+        height: 1.5rem;
+        width: 100%;
+        p{
+           font-size: .28rem;
+           text-align: left;
+           margin-top: .2rem;
+           font-weight: bold;
+        }
+    }
+    
+}
+.wid100{
+    width: 100%;
+}
+//<div class="g_total_extend boderNone" >
+//                          <div class="radio_left">
+//                              <p>转化率<span id="tr_rad">2.23</span>%</p>
+//                              <p>战败率<span id="fig_rad">15</span>%</p>
+//                          </div>
+//                          <div class="radio_right">
+//                              <p>DMC业绩占比：</p>
+//                          </div>
+//                      </div>
+
+.g_total p:nth-child(1){
+    line-height: 1.3rem;
+}
+.g_total_f {
+    border-left-color: #f1c40f;
+    p {
+    color: #f1c40f;
+}
+}
+.g_total_e {
+    border-left-color: #e75c3d;
+    p {
+    color: #e75c3d;
+}
+}
+.g_total_d {
+    border-left-color: #3598db;
+    p {
+    color: #3598db;
+}
+}
+
+.shuoming {
+    float: left;
+    display: block;
+    font-size: 0.28rem;
+    text-align: right;
+    margin-right: 0.8rem;
+    color: #0097D8;
+    width: 2rem;
+    height: .5rem;
+}
+.shuoming img {
+    width: 0.3rem;
+    height: 0.3rem;
+    vertical-align: middle;
+    margin-right: 0.1rem;
+
+}
+
+.myPaiMing {
+    float: right;
+    display: block;
+    font-size: 0.28rem;
+    text-align: right;
+    margin-right: 0.8rem;
+    color:#0097D8;
+    width: 2rem;
+    height: .5rem;
+}
+.myPaiMing img {
+    width: 0.3rem;
+    height: 0.3rem;
+    vertical-align: middle;
+    margin-right: 0.1rem;
+
+}
+
+
+
+
+
+//弹出框
+.m_pop{
+    display: none;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    top:0;
+    
+}
+.m_pop .m_mask{
+   width:90%;
+   background: #fff;
+   font-size: 0.28rem;
+   position: absolute;
+   left:5%;
+   top:20%;
+   .m_close{
+       width:0.3rem;
+       height:0.3rem;
+       float: right;
+       margin: 0.3rem 0.3rem;
+   }
+   ul{
+       padding-left: 0.2rem;
+       margin:1rem auto;
+       li{
+           line-height: 0.5rem;
+            margin-bottom:0.3rem;
+            i{
+                width:0.12rem;
+                height: 0.12rem;
+                background:#3598db;
+                display: inline-block;
+                .border-radius(0.3rem);
+                margin-right: 0.3rem;
+                vertical-align: middle;
+            }
+            span{
+                display: inline-block;
+                text-indent: 0.4rem;
+            }
+       }
+   }
+}
+//弹出层的效果
+.mean_slide_box{
+   position: absolute;
+   top: 1rem;
+   left: 0;
+   width: 100%;
+   height: 91.25%;
+   background: white;  
+   z-index: 2;
+   display: none;
+}
+.xszt{
+    width: 100%;
+    height: auto;
+ 
+}
+.tit_wrap{
+    margin: 0 auto;
+    margin-top: .41rem;
+    margin-left: 10%;
+    width:86%;
+    height: .57rem;
+}
+.xszt_tit{
+    float: left; 
+    text-align: left; 
+    line-height: .57rem;
+    width: 1.63rem;
+    font-size: .32rem; 
+    font-weight: bold;
+}
+.gn_module{
+    margin: 0 auto;
+    margin-left: 9%;
+    width: 85%;
+    overflow: hidden;
+}
+//时间插件的样式
+input{
+    float: left;
+    width: 42%;
+    height: .81rem;
+    font-size: .18rem;
+    border: 1px solid #D0CCC7;
+    border-radius: 2px;
+    padding-left: .05rem;
+
+}
+.wid20{
+    width:23%;
+}
+.gn_module span {
+
+    width: .52rem;
+    height: .81rem;
+    float: left;
+}
+.gn_module span img{
+    width: 100%;
+    height: 100%;
+}
+.marginTop10{
+    margin-top: .1rem;
+}
+.yjm-btn {
+  float: left;
+  border: none;
+  background: #00a2dc;
+  width: 2rem;
+  margin: 1rem auto;
+  margin-left: 1.2rem;
+  height: 0.8rem;
+  display: block;
+  color: #fff;
+}
+.m-keyTime{
+    font-size: .24rem;
+    position: relative;
+    margin:.3rem 0 0 0;
+    .searchBtn{
+        position: absolute;
+        padding:.2rem;
+        right:.3rem;
+        top:.03rem;
+        font-size:.3rem;
+        background: #3499da;
+        color: #fff;
+    }
+    .addressRang{
+        position: absolute;
+        right: 1.7rem;
+        top:.05rem;
+        select{
+            padding:.2rem;
+            border: 1px solid #D0CCC7;
+        }
+    }
+}
+.displayNone{
+    display: none;
+}
+.dx_tb{
+    margin-left: .7rem;
+    margin-top: .47rem;
+    width: 85%;
+    height: 1.51rem;
+    img{
+        float: left;
+        height: 1.4rem;
+    }
+}
+#bk_content{
+    float: left;
+    display: block;
+    width: 60%;
+    margin-left: .5rem;
+    text-align: left;
+    line-height: 1.5rem;
+    height: 1.5rem;
+    font-size: .25rem;
+}
+.boderNone{
+    border: none;
+}
+.district_title{
+   text-align: center;
+   line-height: 1.5rem;
+   height: 1rem;
+   font-size: .38rem; 
+}
+#zlzl{
+    text-align: center;
+    line-height:1.1rem;
+}
+#zcjl{
+    text-align: center;
+    line-height:1.1rem;
+}
+#zxsl-1{
+    line-height: 1.2rem;
+}
+#yxxsl-1{
+    line-height: 1.2rem;
+}
+#yyddl-1{
+    line-height: 1.2rem;
+}
+#ddcjl-1{
+    line-height: 1.2rem;
+}
+.marginbtm0{
+    margin-bottom: 0;
+}
+.zhuanhualue{
+    margin-left: 5.2rem;
+    height: .5rem;
+    width: 1.5rem;
+    font-size: .28rem;
+}
+#demo1{
+    font-size: .27rem;
+}
+#demo2{
+    font-size: .27rem;
+}
+#yyddl {
+  line-height: 1.2rem;
+}
+#ddcjl{
+  line-height: 1.2rem;
+}
+.center_radio{
+    width: 3rem;
+    font-size: .2rem;
+    height: .6rem;
+    margin-left: 4rem;
+    text-align: center;
+        
+}
+.marginTop0{
+    margin-top: 0;
+}
+.yeji_logo{
+    width: .3rem;
+    height: .4rem;
+    display: block;
+    float: left;
+}
+.app_radio{
+    float: left;
+}

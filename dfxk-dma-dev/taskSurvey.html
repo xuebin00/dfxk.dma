@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+	    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+	    <meta content="telephone=no" name="format-detection">
+	    <meta content="email=no" name="format-detection">
+		<title>任务概况</title>
+		<link rel="stylesheet" type="text/css" href="css/public_css/LCalendar.css">
+		<link rel="stylesheet" type="text/css" href="css/yewuzhibiao.css">
+		<!-- 公用样式 -->
+		<link rel="stylesheet" href="css/public_css/common.css" type="text/css">
+	
+		<script type="text/javascript" src="js/public_js/rem.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<!--电销员和直销员导航的外壳-->
+			<div class="m_nav">
+				<ul>
+					<li class="tab_btn">今日</li>
+					<li class="tab_btn tishi">本周</li>
+					<li class="tab_btn" id="othertime">其他时间</li>
+				</ul>
+			</div>
+			<div class="mean_slide_box" style="height: 569px; display: none; overflow-y: scroll;">
+				<!--时间范围-->
+				<div class="xszt">
+					<div class="tit_wrap">
+						<p class="xszt_tit">时间范围</p>
+					</div>
+					<div class="gn_module">
+						<div class="marginTop10">
+				            <input id="demo1" type="text" readonly="" placeholder="日期选择">
+				        </div>
+				        <span>
+				        	<img src="images/public_img/timerline.png">
+				        </span>
+				        <div>
+				            <input id="demo2" type="text" readonly="" placeholder="日期选择">
+				        </div>
+					</div>
+				</div>
+				<button class="yjm-btn" id="resetting">重置</button>
+				<button class="yjm-btn" id="sure">确认</button>
+			</div>
+			<div class="m_content" id="yjzb_content"></div>
+		</div>
+		<script src="js/public_js/jquery.min.js"></script>
+		<script src="js/public_js/LCalendar.js"></script>
+		<script src="js/public_js/dateComputer.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/tasksurvey.1.0.js"></script>
+	</body>
+</html>

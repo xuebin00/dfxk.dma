@@ -1,0 +1,371 @@
+@import 'public_css/mixin';
+//顶部最上层的导航
+#content {
+    position: relative;
+}
+
+.ft_default {
+    color: #00A2DC;
+}
+
+.ft_nav ul {
+    display: flex;
+    display: -webkit-flex;
+    font-size: 0.28rem;
+}
+
+.ft_nav ul li {
+    flex: 1;
+    text-align: center;
+}
+
+.ft_nav {
+    height: 1rem;
+    line-height: 1rem;
+}
+
+.BSeximg {
+    width: 0.5rem;
+}
+
+//弹出层的效果
+.mean_slide_box {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    width: 100%;
+    height: 91.25%;
+    background: white;
+    z-index: 2;
+    display: none;
+}
+
+.ft_menu img {
+    vertical-align: middle;
+    width: .23rem;
+    height: .32rem;
+    padding-left: .2rem;
+    padding-right: .2rem;
+    //  transform: rotate(360deg);
+}
+
+.tranform180 {
+    transform: rotate(180deg);
+}
+
+.xszt {
+    width: 100%;
+    height: auto;
+}
+
+.active {
+    border: 1px solid #FF422E;
+    color: #FF422E;
+}
+
+.tit_wrap {
+    margin: 0 auto;
+    margin-top: .41rem;
+    margin-left: 10%;
+    width: 86%;
+    height: .57rem;
+}
+
+.xszt_tit {
+    float: left;
+    text-align: left;
+    line-height: .57rem;
+    width: 1.63rem;
+    font-size: .32rem;
+    font-weight: bold;
+}
+
+.tit_wrap_det {
+    float: right;
+    height: .57rem;
+    line-height: .57rem;
+}
+
+.tit_sel {
+    float: left;
+    height: .57rem;
+    text-align: right;
+    font-size: .28rem;
+    line-height: .57rem;
+    overflow: hidden;
+    color: #878785;
+}
+
+.tit_wrap_det img {
+    width: .23rem;
+    vertical-align: middle;
+    height: .32rem;
+    padding-left: .2rem;
+    padding-right: .2rem;
+}
+
+.gn_module {
+    margin: 0 auto;
+    margin-left: 9%;
+    width: 85%;
+    overflow: hidden;
+}
+
+.gn_module ul {
+    width: 100%;
+    height: .88rem;
+    overflow: hidden;
+}
+
+.gn_module ul li {
+    float: left;
+    height: .88rem;
+    margin-right: 0.1rem;
+}
+
+.gn_module ul li p {
+    margin: 0 auto;
+    margin-top: .18rem;
+    padding: 0 0.2rem;
+    height: .58rem;
+    font-size: .24rem;
+    text-align: center;
+    line-height: .58rem;
+    border-radius: 2px;
+    background: #F0F2F4;
+}
+
+//<div class="xszt">
+//  <div class="tit_wrap">
+//      <p class="xszt_tit">线索状态</p>
+//      <p class="tit_wrap_det"><span class="tit_sel">全部</span><img src="images/public_img/xs_xiajiantou.png"</p>   
+//  </div>
+//<div class="gn_module">
+//      <ul>
+//          <li><p>首次待跟进</p></li>
+//          <li><p>再次待跟进</p></li>
+//          <li><p>邀约失败</p></li>
+//      </ul>
+//  </div>
+//  </div>
+//</div>
+//滚动导航条
+.wrap {
+    min-width: 320px;
+    max-width: 768px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.wrapper03 {
+    position: relative;
+    height: 1rem;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    background: #f5f5f5;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.wrapper03 .scroller {
+    position: absolute;
+}
+
+.wrapper03 .scroller li {
+    height: 1rem;
+    float: left;
+    line-height: 1rem;
+    font-size: .26rem;
+    text-align: center
+}
+
+.wrapper03 .scroller li a {
+    display: block;
+    margin: 0 .18rem;
+    padding: 0 .1rem
+}
+
+.wrapper03 .scroller li.act a {
+    color: #00A2DC;
+    height: .9rem;
+    border-bottom: 1px solid #00A2DC
+}
+
+.xs_content {
+    width: 100%;
+}
+
+.xs_con_Detail li {
+    width: 100%;
+    height: 3.95rem;
+    overflow: hidden;
+}
+
+.xs_head {
+    width: 100%;
+    height: 1rem;
+    text-align: center;
+    line-height: 1rem;
+    font-size: .3rem;
+    position: relative;
+    font-weight: 500;
+    border-bottom: 1px solid #D0CCC7;
+}
+
+.xs_head p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.07rem;
+    height: 100%;
+    text-align: center;
+    line-height: 1rem;
+    font-weight: normal;
+}
+
+.xs_body {
+    width: 100%;
+    height: 1.94rem;
+    position: relative;
+}
+
+.xs_body_tit {
+    float: left;
+    margin-top: .6rem;
+    width: 30%;
+    padding-left: 0.2rem ;
+    height: .85rem;
+    border-right: 1px solid #D0CCC7;
+    text-align: center;
+    line-height: .85rem;
+    display: -webkit-flex;
+    align-items: center;
+    font-size: .32rem;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.xs_style {
+    float: left;
+    width: 63%;
+    height: .85rem;
+    padding-left: .27rem;
+    height: 100%;
+    font-size: .3rem;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.xs_style>p {
+    width: 105%;
+}
+
+.xs_sty_time {
+    margin-top: .1rem;
+    font-size: .2rem;
+}
+
+.xs_foot {
+    width: 100%;
+    height: .84rem;
+    text-align: center;
+    line-height: .84rem;
+    background: #FF422E;
+    color: white;
+    position: relative;
+}
+
+//将立即跟进的背景色改变
+.colorBackgroudGray {
+    background: #A7A39E;
+}
+
+// 立即跟进的图标定位两种：第一种是灰色li的
+.xs_img_g {
+   position: absolute;
+    top: -0.02rem;
+    left:  4.5rem;
+    width: .32rem;
+    height: .84rem;
+}
+
+.xs_img {
+    position: absolute;
+    top: 0;
+    left: 2.54rem;
+    width: .78rem;
+    height: .84rem;
+}
+
+.xs_sex {
+    position: absolute;
+    top: .73rem;
+    left: .26rem;
+    width: .47rem;
+    height: .3rem;
+    z-index: 0;
+}
+
+.zhanwei {
+    width: 100%;
+    height: .22rem;
+    background: #F6F5F4;
+    border-bottom: 1px solid #D0CCC7;
+}
+
+.colorGre>* {
+    color: #A7A39E;
+}
+
+.colorRed {
+    color: #FF422E;
+}
+
+.zhanwei_tab {
+    width: 100%;
+    height: 1rem;
+    padding-bottom: .98rem;
+    text-align: center;
+    line-height: 0.98rem;
+}
+
+//时间插件的样式
+input {
+    float: left;
+    width: 41%;
+    height: .81rem;
+    font-size: .18rem;
+    border: 1px solid #D0CCC7;
+    border-radius: 2px;
+    padding-left: .2rem;
+}
+
+.gn_module span {
+    width: .52rem;
+    height: .81rem;
+    float: left;
+}
+
+.gn_module span img {
+    width: 100%;
+    height: 100%;
+}
+
+.marginTop10 {
+    margin-top: .1rem;
+}
+
+.yjm-btn {
+    border: none;
+    background: #00a2dc;
+    width: 2rem;
+    margin: 1rem auto;
+    height: 0.8rem;
+    display: block;
+    color: #fff;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title>多维统计</title>
+		<!-- 公用样式 -->
+		<link rel="stylesheet" href="css/public_css/common.css" type="text/css">
+
+		<link rel="stylesheet" type="text/css" href="css/public_css/LCalendar.css" />
+		<link rel="stylesheet" href="css/statis.css" type="text/css">
+		<!--公用rem-->
+		<script type="text/javascript" src="js/public_js/rem.js"></script>
+	</head>
+	<body>
+		<div class="m-keyTime">
+			<div class="gn_module">
+				<div class="marginTop10">
+					<input id="demo1" type="text" readonly="" />
+				</div>
+				<span>
+		        	<img src="images/public_img/timerline.png" />
+		        </span>
+				<div>
+					<input id="demo2" type="text" readonly="" />
+				</div>
+			</div>
+			<div class="addressRang">
+				<select name="land">
+					<option value="-1">全国</option>
+				</select>
+			</div>
+			<a href="javascript:;" class="searchBtn">检索</a>
+		</div>
+
+		<!-- 统计范围 -->
+		<div id="content">
+			<div class="wrapper wrapper03" id="wrapper03">
+				<div class="scroller">
+					<ul class="clearfix j-qudao">
+						<li class="cur">
+							<a href="javascript:void(0)" data-type="getChannel">渠道统计</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)" data-type="getSeriesclass">车系统计</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)" data-type="getActivity">活动统计</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)" data-type="getSource">来源统计</a>
+						</li>
+						<!-- <li>
+							<a href="javascript:void(0)" data-type="getArea">区域统计</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)" data-type="getUserList">人员统计</a>
+						</li> -->
+						<li>
+							<a href="javascript:void(0)" data-type="getArea">区域统计</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="m-bd">
+				<div class="chart"></div>
+			</div>
+			
+		</div>
+		<script src="js/public_js/jquery.min.js"></script>
+		<script src="js/public_js/echarts.min.js"></script>
+		<script src="js/public_js/LCalendar.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/statis.2.0.js"></script>
+	</body>
+</html>

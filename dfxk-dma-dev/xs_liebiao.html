@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<link rel="stylesheet" type="text/css" href="css/public_css/LCalendar.css" />
+		<link rel="stylesheet" type="text/css" href="css/public_css/common.css" />
+		<link rel="stylesheet" href="css/xsgj_xslb.css">
+		<title>线索跟进-线索列表</title>
+		<script src="js/public_js/rem.js"></script>
+		<style type="text/css">
+			.ft_nav>ul>li{
+				width: 33.33%;
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="content">
+			<!--导航区域-->
+			<div class="ft_nav">
+				<ul>
+					<li class="tab_but ft_default">今天</li><li class="tab_but">本周</li><li class="ft_menu tab_but ">更多筛选<img src="images/public_img/xs_xiajiantou.png" /> </li>
+				</ul>
+			</div>
+			<!--更多筛选点击后的界面-->
+			<div class="yjm-scroll">
+				<div class="mean_slide_box">
+
+					<!--线索状态-->
+					<div class="xszt">
+						<div class="tit_wrap">
+							<p class="xszt_tit">线索状态</p>
+							<p class="tit_wrap_det"><span class="tit_sel">全部</span><img src="images/public_img/xs_xiajiantou.png" /> </p>
+						</div>
+						<div class="gn_module">
+							<ul id="states">
+
+							</ul>
+						</div>
+					</div>
+					<!--线索级别-->
+					<div class="xszt">
+						<div class="tit_wrap">
+							<p class="xszt_tit">线索级别</p>
+							<p class="tit_wrap_det"><span class="tit_sel">全部</span><img src="images/public_img/xs_xiajiantou.png" /> </p>
+						</div>
+						<div class="gn_module">
+							<ul id="level">
+
+							</ul>
+						</div>
+					</div>
+					<!--渠道-->
+					<div class="xszt">
+						<div class="tit_wrap">
+							<p class="xszt_tit">渠道</p>
+							<p class="tit_wrap_det"><span class="tit_sel">全部</span><img src="images/public_img/xs_xiajiantou.png" /> </p>
+						</div>
+						<div class="gn_module">
+							<ul id="channel">
+
+							</ul>
+						</div>
+					</div>
+					<!--车型级别-->
+					<div class="xszt">
+						<div class="tit_wrap">
+							<p class="xszt_tit">车系</p>
+							<p class="tit_wrap_det"><span class="tit_sel">全部</span><img src="images/public_img/xs_xiajiantou.png" /> </p>
+						</div>
+						<div class="gn_module">
+							<ul id="seriesclass">
+
+							</ul>
+						</div>
+					</div>
+					<!--时间范围-->
+					<div class="xszt">
+						<div class="tit_wrap">
+							<p class="xszt_tit">时间范围</p>
+						</div>
+						<div class="gn_module">
+							<div class="marginTop10">
+								<input id="demo1" type="text" readonly="" placeholder="日期选择" data-lcalendar="2016-05-11,2016-05-11" />
+							</div>
+							<span>
+				        	<img src="images/public_img/timerline.png" />
+				        </span>
+							<div>
+								<input id="demo2" type="text" readonly="" placeholder="日期选择" data-lcalendar="2016-05-11,2016-05-11" />
+							</div>
+						</div>
+					</div>
+					<button class="yjm-btn" data='off'>确认</button>
+				</div>
+
+				<!--主题内容区域-->
+				<div class="ft_list_wrap">
+					<!--内容区域的滚动导航-->
+					<div class="wrapper wrapper03" id="wrapper03">
+						<div class="scroller">
+							<ul id="shortcut_li">
+							</ul>
+						</div>
+					</div>
+					<div class="xs_content">
+						<ul class="xs_con_Detail" id="conlist">
+
+						</ul>
+						<!--因为底部的tab导航是定位的所以必须再最下面把内容顶上去，要不会有一部分被挡住-->
+						<div class="zhanwei_tab" data-if='false'>点击加载更多</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--总条数-->
+		<input type="hidden" name="" id="total" value="" />
+		<!--当前页-->
+		<input type="hidden" name="" id="current_page" value="1" />
+		<!--每页显示条数-->
+		<input type="hidden" name="" id="per_page" value="" />
+		<!--开始时间-->
+		<input type="hidden" name="" id="beginTime" value="" />
+		<!--结束时间-->
+		<input type="hidden" name="" id="endTime" value="" />
+		<!--渠道-->
+		<input type="hidden" name="" id="BChannelId" value="" />
+		<!--线索id-->
+		<input type="hidden" name="" id="LZ" value="" />
+		<!--车系-->
+		<input type="hidden" name="" id="BSeriesclassId" value="" />
+		<!--线索级别-->
+		<input type="hidden" name="" id="BLevelId" value="" />
+		<!---->
+		<input type="hidden" name="" id="urlKey" value="" />
+		<!---->
+		<script src="js/public_js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public_js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public_js/iScroll.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public_js/navbarscroll.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public_js/dateComputer.js"></script>
+		<script src="js/xsgj_xslb.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public_js/LCalendar.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var Lz = [],
+				urlKey = [];
+			var Param = {},
+				objVal = {},
+				objOpen = false,
+				url = '';
+
+			function init( url, _load ) {
+				Param = {};
+				objVal = {};
+				if ( url.indexOf( "?" ) != -1 ) {
+					var str = url.substr( 1 );
+
+					strs = str.split( "&" );
+
+					for ( var i = 0; i < strs.length; i++ ) {
+						key = ( strs[ i ].split( "=" )[ 0 ] );
+						v = unescape( strs[ i ].split( "=" )[ 1 ] );
+
+						if ( key == 'urlV' ) {
+							Param[ key ] = v;
+						}
+
+						if ( key == 'type' ) {
+							showtypeBanr( v );
+						}
+						if ( _load == 2 ) {
+							objOpen = true;
+						}
+						if ( objOpen ) {
+							if ( key.indexOf( '[]' ) > -1 ) {
+								key = ( strs[ i ].split( "=" )[ 0 ] ).replace( /\[\]/, '' );
+								if ( typeof objVal[ key ] == 'undefined' ) {
+									objVal[ key ] = [];
+								}
+								objVal[ key ].push( v );
+							} else {
+								key = ( strs[ i ].split( "=" )[ 0 ] );
+								objVal[ key ] = v;
+							}
+						}
+						if ( key == 'urlKey' && _load == 1 ) {
+							objOpen = true;
+						}
+					}
+				}
+
+				$.each( objVal, function ( k, v ) {
+					if ( typeof v == 'object' ) {
+						$.each( v, function ( nk, nv ) {
+							if ( nv == 'undefined' ) {
+								objVal[ k ][ nk ] = Param[ 'urlV' ];
+							}
+						} )
+					} else {
+						if ( v == 'undefined' ) {
+							objVal[ k ] = Param[ 'urlV' ];
+						}
+					}
+				} );
+				return objVal;
+			}
+			url = location.search;
+
+			init( url, 1 );
+			var objurl = '',
+				len = 0;
+			for ( var i in objVal ) {
+				if ( $.isArray( objVal[ i ] ) ) {
+					for ( var j in objVal[ i ] ) {
+
+						objurl += '&' + i + '[]=' + objVal[ i ][ j ];
+					}
+				} else {
+					if ( len == 0 ) {
+						objurl += '?' + i + '=' + objVal[ i ];
+					} else {
+						objurl += '&' + i + '=' + objVal[ i ];
+
+					}
+
+				}
+				len++;
+			}
+			//			console.log( objurl );
+			//			init( objurl, 1 )
+			//			console.log( init( objurl, 1 ) );
+			$( "#urlKey" ).val( objurl );
+
+			function showtypeBanr( v ) {
+				$( ".ft_nav" ).find( "li" ).eq( v - 1 ).addClass( 'ft_default' ).siblings( "li" ).removeClass( "ft_default" );
+			}
+
+			//初始化获取 来源的线索参数值
+			function getQueryString( name ) {
+				var reg = new RegExp( '(^|&)' + name + '=([^&]*)(&|$)', 'i' );
+				var r = window.location.search.substr( 1 ).match( reg );
+				if ( r != null ) {
+					return unescape( r[ 2 ] );
+				}
+				return null;
+			}
+
+			//更多时间获取、判断 默认近日
+
+			var getMonth = new Date().getFullYear() + '-' + ( new Date().getMonth() + 1 ) + '-' + new Date().getDate();
+			
+
+			function more_time() {
+
+				var b = getMonth.split( '-' );
+				var mouth = b[ 1 ];
+				if ( b[ 1 ].length < 2 ) {
+					mouth = '0' + mouth
+				};
+				var day = b[ 2 ];
+				if ( b[ 2 ].length < 2 ) {
+					day = '0' + day
+				};
+				$( "#beginTime" ).val( b[ 0 ] + '-' + mouth + '-' + day );
+				$( "#endTime" ).val( b[ 0 ] + '-' + mouth + '-' + day );
+				return time2 = time1 = b[ 0 ] + '-' + mouth + '-' + day;
+
+			}
+			common.loading( "show" ); //调出过渡层
+			$( "#conlist" ).empty(); //清空列表内容
+			var Arrdata = {
+				beginTime: more_time(),
+				endTime: more_time(),
+
+				page: 1
+			};
+			Arrdata = $.extend( {}, Arrdata, objVal );
+
+			//初始化页面
+			$.ajax( {
+				type: "get",
+				url: common._url + "appapi/caller",
+				dataType: "jsonp",
+				data: Arrdata,
+				success: function ( data ) {
+
+					appedlist( data ); //渲染列表
+					var data = data.data;
+					//线索状态
+					var states = '';
+					for ( var i in data.states ) {
+						states += "<li><p class='li_md' data=" + data.states[ i ].urlParameter + ">" + data.states[ i ].title + "</p></li>";
+					}
+					$( "#states" ).html( states );
+
+					//线索级别
+					var level = '';
+					for ( var i in data.level ) {
+						level += "<li><p class='li_md' data=" + data.level[ i ].urlParameter + ">" + data.level[ i ][ 'title' ] + "（" + data.level[ i ][ 'note' ] + "）" + "</p></li>";
+					}
+					$( "#level" ).html( level )
+
+					//渠道
+					var channel = '';
+					for ( var i in data.channel ) {
+						channel += "<li><p class='li_md' data=" + data.channel[ i ].urlParameter + ">" + data.channel[ i ].title + "</p></li>";
+					}
+					$( "#channel" ).html( channel );
+					//车型级别
+					var seriesclass = "";
+					for ( var i in data.seriesclass ) {
+						seriesclass += "<li><p class='li_md' data=" + data.seriesclass[ i ].urlParameter + ">" + data.seriesclass[ i ].title + "</p></li>";
+					}
+					$( "#seriesclass" ).html( seriesclass );
+					//快捷筛选 按钮
+					var searchTop = '';
+					for ( var i in data.searchTop ) {
+						var _searchTop = data.searchTop[ i ];
+						searchTop += '<li data="' + _searchTop.url + '"><a href="javascript:void(0)">' + _searchTop.param + '<span></span></a></li>';
+					}
+					$( "#shortcut_li" ).html( searchTop );
+
+				}
+			} );
+			common.jsonpError();
+		</script>
+
+	</body>
+
+</html>

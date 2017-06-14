@@ -1,0 +1,102 @@
+@import 'public_css/mixin';
+body{
+    padding-top:51px;
+}
+.g-my {
+    font-size: 0.32rem;
+    color: #333;
+    a {
+        display: block;
+        overflow: hidden;
+    }
+}
+.m-member {
+    background: url("../images/public_img/info_bg.jpg") no-repeat;
+    width: 100%;
+    height: 2.43rem;
+    padding-top: 0.5rem;
+    background-size: cover;
+    .photo {
+        position: relative;
+        width: 1.95rem;
+        height: 1.95rem;
+        float: left;
+        margin-left: 0.3rem;
+        .photo_bg {
+            width: 1.95rem;
+            height: 1.95rem;
+            border-radius: 50%;
+            background: #fff;
+            opacity: 0.15;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        img {
+            width: 1.8rem;
+            height: 1.8rem;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 22;
+            top: 0.075rem;
+            left: 0.075rem;
+        }
+    }
+    .info {
+        max-width: 4rem;
+        margin-left: 0.45rem;
+        float: left;
+        margin-top: 0.15rem;
+        p {
+            line-height: 0.5rem;
+            color: #fff;
+            font-size: 0.26rem;
+        }
+    }
+    .arr {
+        background: url("../images/public_img/icon_arr01.png") right center no-repeat;
+        background-size: 0.37rem 0.31rem;
+        float: right;
+        width: 0.37rem;
+        height: 0.31rem;
+        margin-top: 0.8rem;
+    }
+}
+.m-help {
+    overflow: hidden;
+    li {
+        height: 1rem;
+        line-height: 1rem;
+        padding-left: 0.25rem;
+        .border-bottom(@width:1px;@color:#ccc);
+        background: url("../images/public_img/icon_arr02.png") right center no-repeat;
+        background-size: 0.37rem 0.31rem;
+        padding-right: 0.25rem;
+        span {
+            padding-left: 0.5rem;
+            display: block;
+        }
+        .news {
+            background: url("../images/public_img/icon_mail.png") left center no-repeat;
+            background-size: 0.34rem 0.31rem;
+        }
+        .help {
+            background: url("../images/public_img/icon_why.png") left center no-repeat;
+            background-size: 0.34rem 0.31rem;
+        }
+        .upgrade {
+            background: url("../images/public_img/icon_up.png") left center no-repeat;
+            background-size: 0.34rem 0.31rem;
+        }
+    }
+}
+.sign-out {
+    width: 6.3rem;
+    height: 1rem;
+    line-height: 1rem;
+    background: #3598db;
+    color: #fff;
+    text-align: center;
+    margin: 1rem auto;
+}

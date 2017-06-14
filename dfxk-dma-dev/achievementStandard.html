@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta content="yes" name="apple-mobile-web-app-capable">
+	    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+	    <meta content="telephone=no" name="format-detection">
+	    <meta content="email=no" name="format-detection">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/public_css/LCalendar.css" />
+		<link rel="stylesheet" type="text/css" href="css/yewuzhibiao.css" />
+		<!-- 公用样式 -->
+		<link rel="stylesheet" href="css/public_css/common.css" type="text/css">
+		<!--<script src="js/common.js" type="text/javascript" charset="utf-8"></script>-->
+		<script type="text/javascript" src="js/public_js/rem.js"></script>
+	</head>
+
+	<body>
+		
+		<div class="container">
+			<!--电销员和直销员导航的外壳-->
+			<div class="m_nav displayNone">
+				<ul>
+					<li class="tab_btn tishi">本周</li>
+					<li class="tab_btn">本月</li>
+					<li class="tab_btn" id="othertime" >其他时间</li>
+				</ul>
+			</div>
+			<!--总部的导航外壳-->
+			<div id="zongbu_nav" class="m-keyTime_wrap displayNone">
+				<!--<div class="m-keyTime">
+					<div class="gn_module">
+							<div class="marginTop10">
+								<input class="wid20" id="demo1" type="text" />
+							</div>
+							<span>
+					        	<img src="images/public_img/timerline.png" />
+					        </span>
+							<div>
+								<input class="wid20" id="demo2" type="text"/>
+							</div>
+					</div>
+					<div class="addressRang">
+							<select name="land">
+								<option value="-1">全国</option>
+							</select>
+					</div>
+					<a href="javascript:;" class="searchBtn">检索</a>
+				</div>-->
+			</div>
+			
+			
+			<div class="mean_slide_box">
+				<!--时间范围-->
+				<div class="xszt">
+					<div class="tit_wrap">
+						<p class="xszt_tit">时间范围</p>
+					</div>
+					<div class="gn_module">
+						<div class="marginTop10">
+				            <input id="demo1" type="text"  readonly="" placeholder="日期选择" data-lcalendar="2016-05-11,2016-05-11" />
+				        </div>
+				        <span>
+				        	<img src="images/public_img/timerline.png" />
+				        </span>
+				        <div>
+				            <input id="demo2" type="text" readonly="" placeholder="日期选择" data-lcalendar="2016-05-11,2016-05-11" />
+				        </div>
+					</div>
+				</div>
+				<button class="yjm-btn" id="resetting">重置</button>
+				<button class="yjm-btn" id="sure">确认</button>
+			</div>
+			<div class="m_content" id="yjzb_content">
+				<!--<div class="g_consh" id="xs_content">
+					<div class="g_total">
+						<span>总线索量</span>
+						<p id="zxsl" class="g_sl">57</p>
+					</div>
+					<div class="center_radio"><img class="yeji_logo" src="images/yeji_xiajiaotou.png"><span class="app_radio">有效线索率25%</span></div>
+					<div class="g_total g_total_f marginTop0">
+						<span>有效线索量</span>
+						<p id="yxxsl">32</p>
+					</div>
+					<div class="center_radio"><img class="yeji_logo" src="images/yeji_xiajiaotou.png"><span class="app_radio">邀约到店率25%</span></div>
+					<div class="g_total g_total_e marginTop0">
+						<span>邀约到店量</span>
+						<p id="yyddl">32</p>
+					</div>
+					<div class="center_radio"><img class="yeji_logo" src="images/yeji_xiajiaotou.png"><span class="app_radio">到店成交量25%</span></div>
+					<div class="g_total g_total_d marginTop0">
+						<span>到店成交量</span>
+						<p id="ddcjl">32</p>
+					</div>
+					<a href="###" class="shuoming"><img src="images/public_img/zbsm.png" alt="" />指标说明</a>
+				</div>-->
+				<!--直销静态图-->
+				<!--<div class="g_consh" id="xs_content">
+					<div class="g_total g_total_e">
+						<span>首次到店量</span>
+						<p id="yyddl">32</p>
+					</div>
+					<div class="center_radio"><img class="yeji_logo" src="images/yeji_xiajiaotou.png"><span id="app_radio">邀约到店率25%</span></div>
+					<div class="g_total g_total_d marginTop0">
+						<span>到店成交量</span>
+						<p id="ddcjl">32</p>
+					</div>
+					<a href="###" class="shuoming"><img src="images/public_img/zbsm.png" alt="" />指标说明</a>
+				</div>-->
+				<div class="baoke_wrap">
+					<p class="dx_tb displayNone">
+						<img class="dx_biaoji" src="images/public_img/danxuananniu.png"/>
+						<span id="bk_content">
+							仅显示保客数据
+						</span>
+					</p>
+					<!--<div class="g_consh displayNone" id="bkshuju">
+						
+					</div>-->
+					<div class="g_consh" id="xs_content">
+						<!--<div class="g_total g_total_d">
+							<span>总留资量</span>
+							<p id="zlzl" class="g_sl">56</p>
+						</div>
+						<div class="g_total">
+							<span>总线索量</span>
+							<p id="zxsl" class="g_sl"><b>32</b></br><em>流转率<i id="eff_radio">66%</i></em></p>
+						</div>
+						<div class="g_total g_total_f">
+							<span>有效线索量</span>
+							<p id="yxxsl"><b>32</b></br><em>有效线索率<i id="eff_radio">66%</i></em></p>
+						</div>
+						<div class="g_total g_total_e">
+							<span>邀约到店量</span>
+							<p id="yyddl"><b>32</b></br><em>邀约到店率<i id="app_radio">25%</i></em></p>
+						</div>
+						<div class="g_total g_total_d">
+							<span>到店成交量</span>
+							<p id="ddcjl"><b>32</b></br><em>到店成交率<i id="trade_radio">32%</i></em></p>
+	
+						</div>
+						<div class="g_total g_total_f">
+							<span>总成交量</span>
+							<p id="zcjl">33</p>
+						</div>
+						
+						<div class="g_total_extend boderNone" >
+							<div class="radio_left">
+								<p>转化率:<span id="tr_rad">2.23</span>%</p>
+								<p>战败率:<span id="fig_rad">15</span>%</p>
+							</div>
+						</div>
+						<div class="g_total_extend boderNone" >
+							<div class="radio_right">
+								<p class="wid100">DMC业绩占比：<span id="yjzb">2.23</span>% = <span class="comput">88</span> ÷ <span class="comput">100</span></p>
+								<p class="wid100">DMC结构比 &nbsp;&nbsp;&nbsp;：<span id="jgb">3.67</span>% = <span class="comput">88</span> ÷ (<span class="comput">100-88</span>)</p>
+							</div>
+						</div>
+						-->
+					</div>
+				</div>
+			</div>
+			<a href="###" class="shuoming displayNone"><img src="images/public_img/zbsm.png" alt="" />指标说明</a>
+			<a href="###" class="myPaiMing displayNone"><img src="images/public_img/yjm_b_paiming.png" alt="" />我的排名</a>
+			<!--弹出框-->
+			<div class="m_pop">
+				<div class="m_mask">
+					<img src="images/public_img/close.png" alt="" class="m_close" />
+					<ul>
+						<li class="displayNone dianxiao">
+							<a href="###">
+								<p><i></i>总线索量</p>
+								<span>经过滤排除掉电话不合规的留资数据量</span></a>
+						</li>
+						<li class="displayNone dianxiao">
+							<a href="###">
+								<p><i></i>有效线索量</p>
+								<span>经过电销员实际电话联络确认有效的线索量</span></a>
+						</li>
+						<li class="dianxiao">
+							<a href="###">
+								<p><i></i>邀约到店量</p>
+								<span>电销员成功邀约到店的线索量</span></a>
+						</li>
+						<li class="dianxiao">
+							<a href="###"></a>
+							<p><i></i>到店成交量</p>
+							<span>在DMS中确认成交的网销数量</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<script type="text/javascript" src="js/public_js/jquery.min.js"></script>
+			<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript" src="js/public_js/LCalendar.js"></script>
+			<script src="js/public_js/dateComputer.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript" src="js/yejizhibiao.js"></script>
+			
+	</body>
+
+</html>

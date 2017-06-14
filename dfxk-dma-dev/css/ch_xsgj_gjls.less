@@ -1,0 +1,322 @@
+@import 'public_css/mixin';
+@import 'public_css/common';
+body {
+    background: #f6f6f6;
+}
+
+button {
+    border: none;
+    background: none;     
+}
+
+em,
+i {
+    font-style: normal;
+    font-weight: normal;
+}
+
+.ch-gjls-list {
+    padding: 0.4rem 0rem 1rem;
+}
+
+.ch-gjls-list li {
+    padding: 0.4rem 0.27rem;
+    width: 5.3rem;
+    height: 2.08rem;
+    margin: 0.24rem auto 0 0.83rem;
+    position: relative;
+    background: #fff;
+    .border-radius(0.3rem);
+    -webkit-box-shadow: 0 0 0.15rem 0 #ccc;
+    box-shadow: 0 0 0.15rem 0 #ccc;
+    .title {
+        font-size: 0.32rem;
+        em {
+            float: right;
+        }
+    }
+    .info {
+        font-size: 0.36rem;
+        font-weight: 400;
+        margin: 0.4rem 0;
+        position: relative;
+        span {
+            display: inline-block;
+            width: 0.38rem;
+            height: 0.38rem;
+            text-align: center;
+            line-height: 0.38rem;
+            .border-radius(0.05rem);
+        }
+    }
+    .dingdan {
+        font-size: 0.3rem;
+        color: #999999;
+        position: relative;
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            width: 0.24rem;
+            height: 0.28rem;
+            background: url(../images/public_img/ch_gjls_tx.png) no-repeat;
+            -webkit-background-size: 100% 100%;
+            background-size: 100% 100%;
+            margin-right: 0.06rem;
+            margin-top: -0.06rem;
+        }
+        a {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin-top: -0.21rem;
+            width: 0.37rem;
+            height: 0.42rem;
+            background: url("../images/public_img/ch_gjls_icon07.png") no-repeat;
+            -webkit-background-size: 100% 100%;
+            background-size: 100% 100%;
+        }
+    }
+}
+
+// 不同的 截断不同的颜色
+.ch-gjls-list li.status01 {
+    .info {
+        color: #1bbc9b;
+        span {
+            border: 1px solid #1bbc9b;
+            color: #1bbc9b;
+        }
+        i {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin-top: -0.185rem;
+            width: 0.35rem;
+            height: 0.37rem;
+           
+        }
+    }
+}
+
+.ch-gjls-list li.status02 {
+    .info {
+        color: #3598db;
+        span {
+            border: 1px solid #3598db;
+            color: #3598db;
+        }
+        i {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin-top: -0.185rem;
+            width: 0.35rem;
+            height: 0.37rem;
+         
+        }
+    }
+}
+
+.ch-gjls-list li.status03 {
+    .info {
+        color: #e75c3d;
+        span {
+            border: 1px solid #e75c3d;
+            color: #e75c3d;
+        }
+        i {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin-top: -0.2rem;
+            width: 0.4rem;
+            height: 0.4rem;
+           
+        }
+    }
+}
+
+.ch-gjls-list li.status04 {
+    .info {
+        color: #f1c40f;
+        span {
+            border: 1px solid #f1c40f;
+            color: #f1c40f;
+        }
+        i {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin-top: -0.2rem;
+            width: 0.4rem;
+            height: 0.4rem;
+          
+        }
+    }
+}
+
+.ch-gjls-list li.status05 {
+    .info {
+        color: #2ecd71;
+        span {
+            border: 1px solid #2ecd71;
+            color: #2ecd71;
+        }
+        i {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin-top: -0.2rem;
+            width: 0.4rem;
+            height: 0.4rem;
+           
+        }
+    }
+}
+
+.ch-gjls-list li.status06 {
+    color: #999999;
+    .info {
+        color: #999999;
+        span {
+            border: 1px solid #999999;
+            color: #999999;
+        }
+        i {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin-top: -0.2rem;
+            width: 0.4rem;
+            height: 0.4rem;
+        }
+    }
+}
+
+.ch-gjls-list li:last-child:after {
+    display: none;
+}
+
+//  列表前的 线
+.ch-gjls-list li:after {
+    content: "";
+    position: absolute;
+    left: -0.3rem;
+    top: 1.77rem;
+    height: 2.84rem;
+    width: 0.04rem;
+    background: url("../images/public_img/ch_gjls_line.png") repeat-y;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+.ch-gjls-list li:before {
+    content: "";
+    position: absolute;
+    left: -0.357rem;
+    top: 1.5rem;
+    z-index: 9;
+    width: 0.16rem;
+    height: 0.16rem;
+    .border-radius(50%);
+}
+
+
+/* 
+ * status01: 已成交
+ * status02: 已交定金
+ * status03: 申请战败
+ * status04: 再次跟进
+ * status05: 邀约待到店
+ * status06: 待分配
+ *  */
+
+//圆点  背景颜色
+.ch-gjls-list li.status01:before {
+    background: #1bbc9b;
+}
+
+.ch-gjls-list li.status02:before {
+    background: #3598db;
+}
+
+.ch-gjls-list li.status03:before {
+    background: #e75c3d;
+}
+
+.ch-gjls-list li.status04:before {
+    background: #f1c40f;
+}
+
+.ch-gjls-list li.status05:before {
+    background: #2ecd71;
+}
+
+.ch-gjls-list li.status06:before {
+    border: 1px solid #999999;
+}
+
+//浮层弹框
+.popup {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    .con {
+        width: 6rem;
+        background: #fff;
+        .border-radius(0.1rem);
+        margin: 48% auto 0;
+        img {
+            margin: 0rem auto 0.34rem;
+            padding-top: 0.62rem;
+            display: block;
+            width: 0.9rem;
+            height: 0.9rem;
+        }
+        p {
+            font-size: 0.32rem;
+            color: #333333;
+            text-align: center;
+            margin-bottom: 0.4rem;
+        }
+    }
+    .ch_btn {
+        width: 100%;
+        height: 1.05rem;
+        border-top: 1px solid #cccccc;
+        font-size: 0.36rem;
+        color: #07ac34;
+        text-align: center;
+        line-height: 1.05rem;
+    }
+}
+
+@font-face {
+    font-family: 'duihao_svg';
+    src: url('../svg/duihao_svg.eot?#iefix') format('embedded-opentype'), url('../svg/duihao_svg.woff') format('woff'), url('../svg/duihao_svg.ttf') format('truetype'), url('../svg/duihao_svg.svg#iconfont') format('svg');
+}
+
+@font-face {
+    font-family: 'jiazai_svg';
+    src: url('../svg/jiazai_svg.eot?#iefix') format('embedded-opentype'), url('../svg/jiazai_svg.woff') format('woff'), url('../svg/jiazai_svg.ttf') format('truetype'), url('../svg/jiazai_svg.svg#iconfont') format('svg');
+}
+//&#xe502;
+.duihao_svg {
+    font-family: 'duihao_svg';
+    font-size: 0.35rem;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+//&#xe61f;
+.jiazai_svg {
+    font-family: 'jiazai_svg';
+    font-size: 0.35rem;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}

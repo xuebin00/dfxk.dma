@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="stylesheet" type="text/css" href="css/public_css/common.css"/>
+    <link rel="stylesheet" href="css/sykb.css">
+    
+    <title>首页看板</title>
+    <script src="js/public_js/rem.js"></script>
+</head>
+<body>
+		
+	
+		    <div id="content">
+					<div  class="nav_box">
+						<ul id="nav_box_content">
+							<!--<li class="ft_default borrig">今天</li>|
+							<li>本周</li>|-->
+						</ul>
+					</div>
+					<div class="contentDetail">
+						<!--看板内容导航看板-->		
+						<div class="banner_detail">
+						<!--充满父容器的banner图-->
+							<img src="images/public_img/shouyekanban_banner.png" />
+						<!--中间的人数-->
+							<div class="a_wrap">
+								<a class="sykb_tit" href="#">
+							    	<div class="renshu">
+										<p class="renshuDetail"><span></span></p>
+										<p class="success"></p>
+									</div>
+								</a>
+							</div>
+							
+							<ul class="shuzhi">
+								<!--<li class="shuzhi_detail displayNone" data-id="待办任务"></li>
+								<li class="shuzhi_detail" data-id="邀约成功">31</li>
+								<li class="shuzhi_detail" data-id="超时任务">13</li>
+								<li class="shuzhi_detail" data-id="回访记录">56</li>-->
+							</ul>
+							
+							<a class="myPM_wrap displayNone" href="javascript:void(0);" onclick="common.paimingSkip(1)">
+								<p class="myPM"><img src="images/public_img/yjm_paiming.png">我的排名</p>
+							</a>
+								
+							
+						</div>
+							
+						<!--看板内容主体部分-->
+						<div class="myForm">
+							<table class="box">
+
+							</table>
+						</div>
+					</div>
+					<!--内容显示之外的占位-->
+					<div class="zhanwei"></div>
+		
+		</div>
+		
+		<script type="text/javascript" src="js/public_js/jquery.min.js"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/sykb.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('.sykb_tit').click(function(){
+				plus.webview.getWebviewById('common').evalJS('common.navBarState()');
+			})
+			$('.myForm').on('click','a',function(){
+				plus.webview.getWebviewById('common').evalJS('common.navBarState()');
+			})
+			
+			
+		</script>
+</body>
+</html>
